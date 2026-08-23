@@ -56,8 +56,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "ObardLCi17g-v12gl6Omr4qoHEiYQZ6yl3_77QQpo0k",
+  },
   other: {
     "google-adsense-account": siteConfig.adsense.publisherId,
+    "google-site-verification": "ObardLCi17g-v12gl6Omr4qoHEiYQZ6yl3_77QQpo0k",
   },
 };
 
