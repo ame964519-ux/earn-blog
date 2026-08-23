@@ -1,0 +1,37 @@
+name: Daily 24/7 Cloud Automated Blog Publisher
+
+on:
+  schedule:
+    # Runs every single day at 06:00 AM UTC (11:00 AM PKT / 11:30 AM IST) automatically
+    - cron: '0 6 * * *'
+  # Allows manual 1-click trigger from GitHub web anytime
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  auto-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Minimal Dependencies
+        run: npm install gray-matter
+
+      - name: Auto Generate High-CPC SEO Article
+        run: node scripts/auto-generate-post.js
+
+      - name: Commit and Push New Article to Cloud
+        run: |
+          git config --global user.name "EarnSmartly AutoBot"
+          git config --global user.email "bot@earnsmartly.com"
+          git add content/posts/
+          git commit -m "Auto-publish daily SEO article: $(date +'%Y-%m-%d')" || exit 0
+          git push
