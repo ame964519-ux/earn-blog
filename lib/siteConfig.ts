@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "EarnSmartly",
   description: "Your ultimate guide to online earning, AI productivity tools, blogging strategies, and passive income streams.",
-  url: "https://earn-blog-k8lknaup8-earn-smartly1.vercel.app", // Live Production URL
+  url: "https://earn-blog.vercel.app", // Canonical Production URL
   author: {
     name: "EarnSmartly Editorial Team",
     bio: "Digital entrepreneur and tech enthusiast passionate about helping people build sustainable online income streams.",
