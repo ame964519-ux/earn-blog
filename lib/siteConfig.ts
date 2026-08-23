@@ -14,10 +14,9 @@ export const siteConfig = {
     youtube: "https://youtube.com",
   },
   // Google AdSense settings:
-  // Jab aapko AdSense account mil jaye, sirf yahan apni ID paste karein (e.g. ca-pub-1234567890123456)
   adsense: {
-    publisherId: "ca-pub-XXXXXXXXXXXXXXXX", // Replace with your real AdSense ID
-    enabled: true, // Turn false to hide ads, true to show
+    publisherId: "ca-pub-4145844582801872", // Connected User AdSense ID
+    enabled: true,
   },
   navigation: [
     { name: "Home", href: "/" },
