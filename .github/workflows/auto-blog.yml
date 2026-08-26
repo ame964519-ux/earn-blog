@@ -25,8 +25,8 @@ jobs:
       - name: Install Minimal Dependencies
         run: npm install gray-matter
 
-      - name: Auto Generate High-CPC SEO Article
-        run: node scripts/auto-generate-post.js
+      - name: Auto Generate 7 High-CPC SEO Articles
+        run: node scripts/auto-generate-post.js --count 7
 
       - name: Commit and Push New Article to Cloud
         run: |

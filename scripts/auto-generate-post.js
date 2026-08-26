@@ -3,12 +3,11 @@ const path = require("path");
 
 const postsDirectory = path.join(__dirname, "../content/posts");
 
-// Ensure directory exists
 if (!fs.existsSync(postsDirectory)) {
   fs.mkdirSync(postsDirectory, { recursive: true });
 }
 
-// Curated high-CPC niche topics for automated publishing queue
+// Master pool of high-CPC topics across AI, Earning, Affiliate, Tech, and Freelancing
 const topicQueue = [
   {
     title: "10 Best Free AI Tools to Make Money Online in 2026",
@@ -21,19 +20,11 @@ const topicQueue = [
     sections: [
       {
         heading: "1. AI Content Creation & Copywriting Engines",
-        body: "Artificial intelligence has democratized digital content production. Tools like ChatGPT, Claude, and Gemini allow freelancers and marketers to craft long-form blog posts, email sequences, and ad copy in minutes. By offering copywriting services on Upwork, Fiverr, or directly to local businesses, digital creators can earn between $30 and $100 per article."
+        body: "Artificial intelligence has democratized digital content production. Tools like ChatGPT, Claude, and Gemini allow freelancers and marketers to craft long-form blog posts, email sequences, and ad copy in minutes."
       },
       {
         heading: "2. Generative Image & Graphic Design Monetization",
-        body: "With generative models like Midjourney, Flux, and Ideogram, anyone can create print-on-demand designs, stock imagery, wall art, and custom YouTube thumbnails. Platforms like Etsy and Redbubble allow you to upload designs once and earn automated royalty payouts each time a product sells."
-      },
-      {
-        heading: "3. Automated Video Editing and Faceless Channels",
-        body: "Faceless YouTube and TikTok channels are generating thousands of dollars per month through programmatic ad revenue and sponsorships. Using AI video generators like CapCut AI, InVideo, and ElevenLabs for voiceovers, you can produce daily short-form videos with zero video production equipment."
-      },
-      {
-        heading: "4. Building Custom AI Chatbots for Local Businesses",
-        body: "Local businesses (such as real estate agencies, dentists, and restaurants) lose thousands of leads due to slow customer support. By configuring no-code AI customer service assistants using tools like Chatbase or Voiceflow, you can charge businesses a $300 setup fee plus $50/month recurring maintenance retainer."
+        body: "With generative models like Midjourney, Flux, and Ideogram, anyone can create print-on-demand designs, stock imagery, wall art, and custom YouTube thumbnails."
       }
     ]
   },
@@ -48,19 +39,11 @@ const topicQueue = [
     sections: [
       {
         heading: "1. Finding Ultra Low-Competition Long-Tail Keywords",
-        body: "The secret to ranking a brand new blog fast is targeting long-tail informational queries with zero to low competition. Instead of targeting 'make money online', target specific search queries like 'best free ai prompt generators for real estate agents'. These queries have clear buyer intent and allow you to rank on Google Page 1 within weeks."
+        body: "The secret to ranking a brand new blog fast is targeting long-tail informational queries with zero to low competition."
       },
       {
-        heading: "2. Setting Up 100% Free Cloud Hosting on Vercel or Netlify",
-        body: "Modern static websites built with Next.js or Astro cost $0.00 to host. Unlike traditional shared hosting that slows down and costs $10/month, static sites hosted on global edge CDNs load in under 200 milliseconds, securing 100/100 Google Lighthouse speed scores which directly improves SEO rankings."
-      },
-      {
-        heading: "3. Fast-Tracking Google AdSense Approval in 14 Days",
-        body: "To get approved on your first submission: ensure you have at least 10 high-quality articles (1000+ words each), clear navigation, and essential trust pages (About Us, Contact Us, Privacy Policy, Terms, and Disclaimer). Avoid copyright images and ensure clean mobile responsiveness."
-      },
-      {
-        heading: "4. Layering Affiliate Offers for 5x Revenue",
-        body: "Do not rely on AdSense alone. By joining high-paying affiliate networks like Amazon Associates, Impact, and ShareASale, you can recommend tools you discuss in your guides and earn recurring 20% to 50% commission checks."
+        heading: "2. Free Cloud Hosting on Global Edge Networks",
+        body: "Modern static websites cost $0.00 to host on Vercel and load in under 200 milliseconds, securing 100/100 Google Lighthouse speed scores."
       }
     ]
   },
@@ -75,15 +58,11 @@ const topicQueue = [
     sections: [
       {
         heading: "1. SaaS & Software Subscription Affiliates",
-        body: "Software-as-a-service (SaaS) products are the holy grail of affiliate marketing because they offer monthly recurring lifetime revenue. Platforms in email marketing, CRM, and AI writing pay between 20% and 40% every single month for as long as your referral remains subscribed."
+        body: "SaaS products offer monthly recurring lifetime revenue. Platforms in email marketing and AI writing pay between 20% and 40% every single month."
       },
       {
         heading: "2. Web Hosting & Developer Tool Networks",
-        body: "Web hosts and cloud infrastructure providers offer massive upfront CPA (cost per acquisition) payouts ranging from $50 to $150 per verified signup. Writing comparison guides like 'Host A vs Host B' is one of the highest-converting formats online."
-      },
-      {
-        heading: "3. Digital Education and Online Courses",
-        body: "Educational platforms and skill-building bootcamps often share 30% to 50% of tuition fees with affiliates. Recommending verified learning resources for high-income skills like coding, prompt engineering, and UI/UX design yields great conversions."
+        body: "Web hosts and cloud infrastructure providers offer massive upfront CPA payouts ranging from $50 to $150 per verified signup."
       }
     ]
   },
@@ -98,15 +77,11 @@ const topicQueue = [
     sections: [
       {
         heading: "1. The 5 Mandatory Compliance Pages",
-        body: "Google AdSense policy strictly requires webmasters to establish clear identity and transparency. You must have: About Us (explaining who runs the site), Contact Us (with email or interactive form), Privacy Policy (mentioning Google Cookie and AdSense disclosure), Terms of Service, and Disclaimer."
+        body: "Google AdSense policy strictly requires webmasters to establish clear identity with About Us, Contact Us, Privacy Policy, Terms, and Disclaimer."
       },
       {
-        heading: "2. Content Depth and Originality Requirements",
-        body: "Google rejects sites with 'Low Value Content' or scraped articles. Each article should be well-structured with H2/H3 subheadings, bullet points, actionable takeaways, and a minimum of 800 to 1,500 words of original, comprehensive information."
-      },
-      {
-        heading: "3. Clean Site Architecture & Fast Loading Speeds",
-        body: "Your site must have an intuitive navigation bar, category pages, and zero broken links. Sites that load under 2 seconds on mobile devices experience significantly higher approval rates."
+        heading: "2. Content Depth and Originality",
+        body: "Publish well-structured articles with subheadings, bullet points, actionable takeaways, and a minimum of 800 to 1,500 words."
       }
     ]
   },
@@ -120,12 +95,12 @@ const topicQueue = [
     summary: "How digital creators are scaling 6-figure automated YouTube channels using AI scriptwriting, realistic voiceovers, and stock footage.",
     sections: [
       {
-        heading: "1. Choosing Profitable Evergreen Niches",
-        body: "Niches like Personal Finance, Tech Reviews, Luxury Lifestyle, and Business Case Studies command the highest CPMs ($10 to $30 per 1,000 views) compared to generic gaming or comedy clips ($1 to $2 CPM)."
+        heading: "1. High-CPM Evergreen Niches",
+        body: "Niches like Personal Finance, Tech Reviews, and Business Case Studies command the highest CPMs ($10 to $30 per 1,000 views)."
       },
       {
         heading: "2. Automated AI Production Pipeline",
-        body: "Use AI models for viral hook scripting, ElevenLabs for studio-grade narration, and automated B-roll assembly tools like CapCut or Premiere templates to produce 3 to 5 videos per week efficiently."
+        body: "Use AI models for viral hook scripting, ElevenLabs for studio-grade narration, and automated editing tools like CapCut."
       }
     ]
   },
@@ -140,11 +115,125 @@ const topicQueue = [
     sections: [
       {
         heading: "1. What is Prompt Engineering?",
-        body: "Prompt engineering is the art and science of structuring inputs for large language models to produce deterministic, accurate, and production-ready outputs for business applications."
+        body: "Prompt engineering is the art and science of structuring inputs for large language models to produce deterministic, accurate outputs."
       },
       {
         heading: "2. High-Demand Freelance Services",
-        body: "Services in highest demand include: custom AI system prompt design, automated customer support script templates, AI SEO content prompt chains, and automated marketing copy workflows."
+        body: "Services in highest demand include custom AI system prompt design, automated customer support script templates, and marketing workflows."
+      }
+    ]
+  },
+  {
+    title: "Top 8 AI Video Generators for Content Creators in 2026",
+    slug: "top-8-ai-video-generators-content-creators-2026",
+    category: "AI Tools",
+    tags: ["AI Video", "Content Creation", "Video Marketing", "Runway", "Sora"],
+    coverImage: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($4.80+)",
+    summary: "Explore the most realistic and powerful generative video platforms that turn text scripts into cinematic 4K video clips.",
+    sections: [
+      {
+        heading: "1. Text-to-Video Breakthroughs",
+        body: "Generative video technology now allows users to describe visual camera angles, lighting conditions, and hyper-realistic physics."
+      },
+      {
+        heading: "2. Monetizing AI Video Assets",
+        body: "Creators can produce viral social media shorts, commercial video ads for e-commerce, and background stock video footage."
+      }
+    ]
+  },
+  {
+    title: "How to Start an Automated Drop Servicing Agency in 2026",
+    slug: "how-to-start-automated-drop-servicing-agency-2026",
+    category: "Online Earning",
+    tags: ["Drop Servicing", "Online Business", "Agency", "Freelancing", "Passive Income"],
+    coverImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($6.50+)",
+    summary: "A step-by-step master blueprint on selling high-ticket digital services by connecting premium clients with specialized freelance talent.",
+    sections: [
+      {
+        heading: "1. Understanding the Drop Servicing Model",
+        body: "Drop servicing involves acting as a digital project manager. You sell a service for $1,000 to a business client and outsource the fulfillment to an expert for $400, keeping $600 profit."
+      },
+      {
+        heading: "2. High-Margin Service Verticals",
+        body: "Focus on services with high perceived value like technical SEO audits, custom Shopify development, and video animation."
+      }
+    ]
+  },
+  {
+    title: "5 Best Free SEO Tools to Rank on Google Page 1 in 2026",
+    slug: "5-best-free-seo-tools-rank-google-page-1-2026",
+    category: "Blogging",
+    tags: ["SEO", "Google Search", "Keyword Research", "Blogging", "Website Traffic"],
+    coverImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($5.90+)",
+    summary: "Rank your articles faster on Google using these 100% free search engine optimization tools without expensive subscriptions.",
+    sections: [
+      {
+        heading: "1. Google Search Console & Keyword Planner",
+        body: "Direct search data from Google reveals exact search query impressions, average ranking positions, and click-through rates."
+      },
+      {
+        heading: "2. Free On-Page & Technical SEO Analyzers",
+        body: "Audit broken links, schema markup, and mobile responsiveness using free tools like PageSpeed Insights and Ubersuggest."
+      }
+    ]
+  },
+  {
+    title: "How to Build a High-Converting Affiliate Comparison Website",
+    slug: "how-to-build-high-converting-affiliate-comparison-website",
+    category: "Affiliate Marketing",
+    tags: ["Affiliate Marketing", "Product Reviews", "Comparison Site", "Passive Income", "Monetization"],
+    coverImage: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($6.80+)",
+    summary: "Learn how 'Versus' and 'Top 10' comparison tables drive the highest buyer-intent conversions in modern digital affiliate marketing.",
+    sections: [
+      {
+        heading: "1. Why Comparison Keywords Convert Best",
+        body: "When users search 'Tool A vs Tool B', they already have their credit card in hand. An objective breakdown with clear pros and cons captures high conversion rates."
+      },
+      {
+        heading: "2. Designing Visual Feature Matrix Tables",
+        body: "Clean responsive tables with highlighted top picks, rating stars, and instant CTA buttons double your affiliate click-through rate."
+      }
+    ]
+  },
+  {
+    title: "The Ultimate Guide to ChatGPT Prompts for Fast Content Writing",
+    slug: "ultimate-guide-chatgpt-prompts-fast-content-writing",
+    category: "AI Tools",
+    tags: ["ChatGPT", "Prompts", "Content Writing", "Copywriting", "Productivity"],
+    coverImage: "https://images.unsplash.com/photo-1676299081847-824916de030a?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($4.50+)",
+    summary: "Copy-paste prompt chains that allow content creators to write comprehensive, human-like, SEO-optimized articles in record time.",
+    sections: [
+      {
+        heading: "1. Overcoming the Robotic AI Tone",
+        body: "Instruct large language models to use conversational transitions, concrete examples, varied sentence lengths, and active voice."
+      },
+      {
+        heading: "2. The 3-Stage Prompting Framework",
+        body: "Stage 1: Outline extraction. Stage 2: Section-by-section drafting with research constraints. Stage 3: Editorial polish and FAQ generation."
+      }
+    ]
+  },
+  {
+    title: "How to Make Passive Income with Digital Planners and Notion Templates",
+    slug: "make-passive-income-digital-planners-notion-templates",
+    category: "Online Earning",
+    tags: ["Notion", "Digital Products", "Templates", "Passive Income", "Etsy"],
+    coverImage: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($4.30+)",
+    summary: "Turn productivity workflows into recurring digital downloads on Gumroad and Etsy with 99% profit margins and zero shipping costs.",
+    sections: [
+      {
+        heading: "1. Top In-Demand Template Categories",
+        body: "Focus on student planners, personal finance and budget trackers, project management dashboards, and habit builders."
+      },
+      {
+        heading: "2. Automated Customer Delivery Pipeline",
+        body: "Platforms like Gumroad automatically deliver duplicate template links to customers upon payment, providing 100% passive fulfillment."
       }
     ]
   }
@@ -170,7 +259,7 @@ function generateMarkdownArticle(topic) {
   bodyContent += `### How long before seeing the first earnings?\n`;
   bodyContent += `With consistent daily publishing and proper keyword targeting, most digital creators start seeing traffic and ad revenue within **30 to 60 days**.\n`;
 
-  const fileContent = `---
+  return `---
 title: "${topic.title}"
 excerpt: "${topic.summary}"
 date: "${today}"
@@ -185,34 +274,51 @@ author:
 ---
 
 ${bodyContent}`;
-
-  return fileContent;
 }
 
 function run() {
-  console.log("Starting Automated Daily Post Generator...");
-
-  // Find a topic that doesn't exist yet
-  const existingFiles = fs.readdirSync(postsDirectory).map(f => f.replace(/\.md$/, ""));
-  
-  let selectedTopic = topicQueue.find(t => !existingFiles.includes(t.slug));
-
-  if (!selectedTopic) {
-    // Generate a fresh dynamic topic with timestamp if all queue items exist
-    const randomTopic = topicQueue[Math.floor(Math.random() * topicQueue.length)];
-    const uniqueSlug = `${randomTopic.slug}-${Date.now().toString().slice(-4)}`;
-    selectedTopic = {
-      ...randomTopic,
-      slug: uniqueSlug,
-      title: `${randomTopic.title} (Updated Edition)`,
-    };
+  const args = process.argv.slice(2);
+  let count = 7;
+  const countIdx = args.indexOf("--count");
+  if (countIdx !== -1 && args[countIdx + 1]) {
+    count = parseInt(args[countIdx + 1], 10) || 7;
   }
 
-  const filePath = path.join(postsDirectory, `${selectedTopic.slug}.md`);
-  const content = generateMarkdownArticle(selectedTopic);
+  console.log(`Starting Automated Daily Post Generator (Target: ${count} posts)...`);
 
-  fs.writeFileSync(filePath, content, "utf8");
-  console.log(`Successfully generated new daily post: ${filePath}`);
+  const existingFiles = fs.readdirSync(postsDirectory).map((f) => f.replace(/\.md$/, ""));
+  let generated = 0;
+
+  for (const topic of topicQueue) {
+    if (generated >= count) break;
+
+    if (!existingFiles.includes(topic.slug)) {
+      const filePath = path.join(postsDirectory, `${topic.slug}.md`);
+      const content = generateMarkdownArticle(topic);
+      fs.writeFileSync(filePath, content, "utf8");
+      existingFiles.push(topic.slug);
+      console.log(`[${generated + 1}/${count}] Generated new post: ${topic.slug}`);
+      generated++;
+    }
+  }
+
+  // If we still need more posts, generate variations with unique timestamp slugs
+  while (generated < count) {
+    const randomTopic = topicQueue[Math.floor(Math.random() * topicQueue.length)];
+    const uniqueSlug = `${randomTopic.slug}-${Date.now().toString().slice(-4)}-${generated}`;
+    const newTopic = {
+      ...randomTopic,
+      slug: uniqueSlug,
+      title: `${randomTopic.title} (2026 Edition)`,
+    };
+    const filePath = path.join(postsDirectory, `${newTopic.slug}.md`);
+    const content = generateMarkdownArticle(newTopic);
+    fs.writeFileSync(filePath, content, "utf8");
+    console.log(`[${generated + 1}/${count}] Generated unique post: ${newTopic.slug}`);
+    generated++;
+  }
+
+  console.log(`\nSuccessfully generated ${generated} fresh articles!`);
 }
 
 run();
