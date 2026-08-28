@@ -30,8 +30,8 @@ jobs:
 
       - name: Commit and Push New Article to Cloud
         run: |
-          git config --global user.name "EarnSmartly AutoBot"
-          git config --global user.email "bot@earnsmartly.com"
+          git config --global user.name "Mr Abdullah"
+          git config --global user.email "ame964519@gmail.com"
           git add content/posts/
           git commit -m "Auto-publish daily SEO article: $(date +'%Y-%m-%d')" || exit 0
           git push

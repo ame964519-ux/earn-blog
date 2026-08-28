@@ -51,7 +51,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white">Email Address</p>
-                  <p className="text-gray-500 text-xs mt-0.5">contact@earnsmartly.com</p>
+                  <a href="mailto:ame964519@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline text-xs mt-0.5 block font-medium">ame964519@gmail.com</a>
                 </div>
               </div>
 

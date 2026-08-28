@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3 border-t border-gray-100 dark:border-slate-800 pt-6">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">5. Contact Us</h2>
           <p>
-            If you have questions or comments about this Privacy Policy, please contact our data protection team at <strong>contact@earnsmartly.com</strong>.
+            If you have questions or comments about this Privacy Policy, please contact our data protection team at <a href="mailto:ame964519@gmail.com" className="text-indigo-600 dark:text-indigo-400 font-semibold underline">ame964519@gmail.com</a>.
           </p>
         </section>
       </div>
