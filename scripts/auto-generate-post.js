@@ -238,6 +238,98 @@ const masterTopics = [
         body: "Use canonical links to cross-post Medium articles back to your own website (EarnSmartly), capturing referral traffic, building email subscribers, and boosting Google SEO."
       }
     ]
+  },
+  {
+    title: "How to Build a $1,500/Month Notion Template Business on Gumroad",
+    slug: "build-1500-month-notion-template-business-gumroad",
+    category: "Online Earning",
+    tags: ["Notion Templates", "Digital Products", "Gumroad", "Passive Income", "Productivity"],
+    coverImage: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($4.90+)",
+    summary: "A step-by-step masterclass on designing aesthetic Notion productivity systems and selling them with 98% profit margins.",
+    sections: [
+      {
+        heading: "1. The Massive Market for Digital Organization",
+        body: "Students, startup founders, and freelancers gladly pay $19 to $49 for ready-to-use Notion workspaces that organize projects, finances, and fitness goals."
+      },
+      {
+        heading: "2. Setting Up Automated Fulfillment on Gumroad",
+        body: "Gumroad handles multi-currency payment processing, discount codes, and instant template delivery with zero recurring monthly software fees."
+      },
+      {
+        heading: "3. Launching on Product Hunt & TikTok",
+        body: "Record 15-second screen recordings demonstrating how quickly the template organizes chaotic workflows to drive consistent viral sales."
+      }
+    ]
+  },
+  {
+    title: "Video Repurposing Agency: How to Turn 1 Podcast into 30 Viral Shorts",
+    slug: "video-repurposing-agency-turn-podcast-into-viral-shorts",
+    category: "AI Tools",
+    tags: ["Video Repurposing", "Shorts", "Reels", "AI Video", "Agency Business"],
+    coverImage: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($5.30+)",
+    summary: "Learn how modern agencies charge podcasters $1,000 to $2,500/month to extract, edit, and caption high-retention short-form video clips.",
+    sections: [
+      {
+        heading: "1. The Short-Form Content Bottleneck",
+        body: "Podcasters and YouTubers record hours of valuable conversations but lack the time to manually edit vertical clips for TikTok, Instagram Reels, and YouTube Shorts."
+      },
+      {
+        heading: "2. The AI Repurposing Stack",
+        body: "Use AI clipping tools like OpusClip or Klap to automatically find hook moments, add animated colored captions, and re-frame speakers into 9:16 vertical ratio."
+      },
+      {
+        heading: "3. Pitching Podcasters via Cold Email",
+        body: "Edit one free high-energy sample short for a target creator, send it via email, and offer a monthly subscription package to handle all their future episodes."
+      }
+    ]
+  },
+  {
+    title: "High-Yield Web Hosting Affiliate Programs: $150 Per Sale Blueprint",
+    slug: "high-yield-web-hosting-affiliate-programs-blueprint",
+    category: "Affiliate Marketing",
+    tags: ["Web Hosting", "Affiliate Marketing", "Cloud Hosting", "CPA Commission", "Blogging"],
+    coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($8.40+)",
+    summary: "Why web hosting affiliate programs offer the highest instant CPA commissions on the web and how to rank comparison articles on Google.",
+    sections: [
+      {
+        heading: "1. The Lucrative Economics of Cloud Hosting Affiliates",
+        body: "Web hosting companies have high customer lifetime value, allowing them to pay affiliates generous $65 to $200 upfront cash bonuses per customer."
+      },
+      {
+        heading: "2. Writing 'Best Hosting for...' Niche Tutorials",
+        body: "Rather than general hosting keywords, write targeted tutorials like 'Best Fast Hosting for Next.js Blogs' or 'Best Budget Hosting for E-commerce'."
+      },
+      {
+        heading: "3. Adding Interactive Speed Comparison Tables",
+        body: "Showcase real benchmark speed tests (TTFB and uptime percentages) in clean tables with clear sign-up buttons to maximize conversion rates."
+      }
+    ]
+  },
+  {
+    title: "Rank and Rent SEO: The Ultimate Local Lead Generation Model in 2026",
+    slug: "rank-and-rent-seo-local-lead-generation-model",
+    category: "Online Earning",
+    tags: ["Rank and Rent", "Local SEO", "Lead Generation", "Digital Real Estate", "Passive Income"],
+    coverImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80",
+    cpcPotential: "High CPC ($7.60+)",
+    summary: "Discover how digital real estate investors build simple local service websites, rank them on Google, and rent them to local contractors for $750/month.",
+    sections: [
+      {
+        heading: "1. What is Digital Rank and Rent?",
+        body: "Build a localized website targeting high-ticket trades (like roofing, tree removal, or plumbing), rank it on Google Page 1, and forward the customer phone calls to an established local contractor."
+      },
+      {
+        heading: "2. Why Local Contractors Love This Service",
+        body: "Contractors want jobs, not complex marketing jargon. Paying a predictable $500 to $1,000 monthly retainer for 15 qualified job inquiries is an easy business decision."
+      },
+      {
+        heading: "3. Low Competition in Suburb Towns",
+        body: "Target towns with populations between 30,000 and 100,000 where Google ranking requires minimal backlinks and simple on-page local SEO."
+      }
+    ]
   }
 ];
 
