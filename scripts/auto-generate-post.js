@@ -7,179 +7,136 @@ if (!fs.existsSync(postsDirectory)) {
   fs.mkdirSync(postsDirectory, { recursive: true });
 }
 
-// Master Infinite Niche Matrix & Generators
-const nicheBlueprints = [
+// Master pool of 100% DISTINCT, Handcrafted High-CPC Topics (Zero Duplicates)
+const uniqueMasterTopics = [
   {
-    topic: "AI Agent Workflows for Business Automation",
-    slugBase: "ai-agent-workflows-business-automation",
-    category: "AI Tools",
-    tags: ["AI Agents", "Automation", "Productivity", "Workflow", "No Code"],
-    coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=80",
-    cpc: "$6.40+",
-    summary: "How autonomous AI agents are eliminating repetitive digital tasks and generating massive efficiency gains for modern entrepreneurs.",
-    sections: [
-      { heading: "1. The Evolution of Multi-Agent Systems", body: "Unlike single prompt-response chatbots, autonomous AI agents can reason, execute web lookups, write code, and coordinate tasks across external APIs without constant human supervision." },
-      { heading: "2. High-ROI Automation Use Cases", body: "Companies pay thousands of dollars for automated customer intake pipelines, competitive pricing scrapers, and automated social media distribution engines." },
-      { heading: "3. Top Free & Open-Source Agent Frameworks", body: "Explore popular frameworks like LangChain, CrewAI, and AutoGen that allow developers and freelancers to build enterprise-grade autonomous agents." }
-    ]
-  },
-  {
-    topic: "Building and Selling Canva Template Kits on Etsy",
-    slugBase: "building-selling-canva-template-kits-etsy",
+    title: "How to Make $2,000/Month with AI Website Building for Local Businesses",
+    slug: "make-money-ai-website-builder-local-businesses",
     category: "Online Earning",
-    tags: ["Canva", "Etsy", "Digital Products", "Passive Income", "Graphic Design"],
-    coverImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80",
-    cpc: "$4.10+",
-    summary: "How digital designers earn $1,000+ per month creating reusable social media templates, business cards, and brand kits using free design tools.",
-    sections: [
-      { heading: "1. The Booming Demand for Ready-to-Use Templates", body: "Small business owners, real estate agents, and coaches need professional branding assets but cannot afford custom agency retainers. Selling customizable Canva links solves this problem instantly." },
-      { heading: "2. Best-Selling Canva Digital Product Niches", body: "Top categories include Instagram carousel bundles, coaching onboarding workbooks, aesthetic price list menus, and digital wedding invitations." },
-      { heading: "3. Automated Fulfillment on Etsy & Gumroad", body: "Customers receive a downloadable PDF containing an instant template access link upon purchase, making the entire fulfillment process 100% passive." }
-    ]
-  },
-  {
-    topic: "High-Ticket SaaS Referral Programs with Recurring Lifetime Commissions",
-    slugBase: "high-ticket-saas-referral-programs-recurring-commissions",
-    category: "Affiliate Marketing",
-    tags: ["SaaS Affiliate", "Recurring Income", "Affiliate Marketing", "Passive Income", "Software"],
+    tags: ["Web Design", "Local Business", "AI Tools", "Framer", "Agency"],
     coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
-    cpc: "$7.80+",
-    summary: "A curated guide to the highest-paying software partner programs that send monthly recurring revenue checks straight to your bank account.",
+    cpc: "$6.80+",
+    summary: "How modern freelancers use AI website builders like Framer and Webflow to build and deliver responsive business sites in 48 hours for $500 to $1,500.",
     sections: [
-      { heading: "1. Why Recurring SaaS Affiliates Beat One-Time Payouts", body: "One-off affiliate sales require constant traffic generation. In contrast, monthly software referrals build compounding passive revenue that grows month after month." },
-      { heading: "2. Top Software Programs Paying 30% to 50% Lifetime", body: "Platforms in email marketing (ConvertKit, ActiveCampaign), CRM (HubSpot), and SEO (Semrush, SE Ranking) reward affiliates with high-retention monthly payouts." },
-      { heading: "3. High-Converting Content Angles", body: "Create in-depth workflow tutorials showing how you use the tool to solve a real business challenge, embedding your referral link naturally in the setup steps." }
+      { heading: "1. The High Demand from Local Service Businesses", body: "Dentists, lawyers, landscapers, and plumbers often have outdated websites that lose leads. Providing a fast, mobile-optimized site solves their direct revenue problem." },
+      { heading: "2. The 3-Hour AI Design Pipeline", body: "Use Framer AI or Relume to generate full site wireframes, Claude for compelling local business copywriting, and Unsplash for high-res commercial imagery." },
+      { heading: "3. Retainer Upsells for Recurring Income", body: "Bundle monthly hosting, speed optimization, and basic text updates into a $99/month recurring maintenance plan." }
     ]
   },
   {
-    topic: "Technical SEO Auditing: How to Charge $500 Per Client",
-    slugBase: "technical-seo-auditing-charge-500-per-client",
-    category: "Blogging",
-    tags: ["SEO", "Technical SEO", "Freelancing", "Website Traffic", "Client Acquisition"],
-    coverImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&auto=format&fit=crop&q=80",
-    cpc: "$5.90+",
-    summary: "Step-by-step masterclass on finding crawl errors, Core Web Vitals bottlenecks, and indexing issues for businesses with high willingness to pay.",
+    title: "Automated Cold Email Lead Generation: The $3,000/Month B2B Blueprint",
+    slug: "automated-cold-email-lead-generation-blueprint",
+    category: "Online Earning",
+    tags: ["Cold Email", "Lead Generation", "B2B", "Sales Outreach", "Agency"],
+    coverImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop&q=80",
+    cpc: "$7.50+",
+    summary: "How B2B lead generation agencies set up secondary domains, email warmups, and personalized AI prompts to book qualified sales calls for tech companies.",
     sections: [
-      { heading: "1. What is a Technical SEO Audit?", body: "A technical audit analyzes site speed, mobile responsiveness, XML sitemaps, structured data schema, and canonical tags to remove ranking roadblocks on Google." },
-      { heading: "2. Free Auditing Tools You Can Use Today", body: "Leverage Google Search Console, PageSpeed Insights, Screaming Frog (free version), and Ahrefs Webmaster Tools to identify critical site issues." },
-      { heading: "3. Delivering Actionable Video Walkthroughs", body: "Record a 5-minute Loom video walking the client through 3 urgent fixes. This builds instant trust and converts one-off audits into $1,000/month ongoing maintenance retainers." }
+      { heading: "1. Setting Up Secondary Email Infrastructure", body: "Never send cold campaigns from your primary domain. Set up 3 to 5 auxiliary domains with proper SPF, DKIM, and DMARC DNS records to ensure 99% inbox placement." },
+      { heading: "2. AI-Driven List Building & Personalization", body: "Extract verified target decision-maker leads using Apollo or Clay, then use AI to write relevant, non-spammy opening lines referencing recent company milestones." },
+      { heading: "3. Pay-Per-Appointment Pricing Model", body: "Charge clients $250 to $500 for every qualified decision-maker that attends a sales discovery call, providing a frictionless risk-free pitch." }
     ]
   },
   {
-    topic: "Substack Newsletter Monetization: From 0 to $2,500/Month Paid Subscribers",
-    slugBase: "substack-newsletter-monetization-paid-subscribers-guide",
-    category: "Blogging",
-    tags: ["Substack", "Newsletter", "Paid Subscriptions", "Writing", "Content Business"],
-    coverImage: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=800&auto=format&fit=crop&q=80",
-    cpc: "$4.50+",
-    summary: "How independent writers and industry analysts are monetizing exclusive insights directly through Substack paid newsletter tiers.",
+    title: "Selling High-Yield Excel & Google Sheets Budget Trackers on Gumroad",
+    slug: "selling-excel-google-sheets-budget-trackers-gumroad",
+    category: "Online Earning",
+    tags: ["Google Sheets", "Excel Templates", "Digital Products", "Gumroad", "Personal Finance"],
+    coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
+    cpc: "$5.10+",
+    summary: "Learn how spreadsheet creators generate $1,500/month in passive digital sales by turning basic formulas into automated financial tracking dashboards.",
     sections: [
-      { heading: "1. The Free-to-Paid Conversion Funnel", body: "Publish free weekly high-value overviews to build authority and grow your email subscriber list, while reserving deep-dive data teardowns and templates for paid members." },
-      { heading: "2. Setting Your Subscription Pricing", body: "Standard industry pricing of $7/month or $70/year means acquiring just 350 dedicated paid subscribers generates over $2,000/month in net passive revenue." },
-      { heading: "3. Cross-Promoting via Substack Recommendations", body: "Leverage Substack's native creator network and recommendation exchange to gain organic subscriber referrals from peer newsletters in your niche." }
+      { heading: "1. Why Simple Spreadsheets Outsell Complex Apps", body: "Users prefer the transparency and privacy of Google Sheets over expensive subscription budgeting apps. Clean visual dashboards with automated charts convert extremely well." },
+      { heading: "2. Top Best-Selling Financial Spreadsheet Types", body: "Popular categories include 50/30/20 monthly budget planners, debt snowball calculators, real estate rental yield trackers, and crypto portfolio sheets." },
+      { heading: "3. Viral Organic Marketing on Reddit & TikTok", body: "Share honest, helpful financial breakdown videos on TikTok and r/personalfinance showing before-and-after debt reduction visuals with template links." }
     ]
   },
   {
-    topic: "AI-Powered Copywriting: High-Converting Email Sequences for E-Commerce",
-    slugBase: "ai-copywriting-high-converting-ecommerce-email-sequences",
-    category: "AI Tools",
-    tags: ["Copywriting", "Email Marketing", "Ecommerce", "Klaviyo", "AI Writing"],
-    coverImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80",
-    cpc: "$5.70+",
-    summary: "Discover how freelancers write abandoned cart and welcome email flows for Shopify brands using targeted AI copywriting prompts.",
-    sections: [
-      { heading: "1. The High Value of E-Commerce Automated Flows", body: "Shopify stores lose over 70% of potential buyers at checkout. Automated abandoned cart email sequences recover 10% to 20% of lost sales, directly driving revenue." },
-      { heading: "2. Structuring the 4-Part Welcome Sequence", body: "Email 1: Brand introduction & discount code. Email 2: Social proof & customer reviews. Email 3: Founder story & core values. Email 4: FAQ & urgency reminder." },
-      { heading: "3. Prompting AI for Persuasive Direct-Response Copy", body: "Guide language models to craft catchy subject lines with curiosity gaps, conversational body copy, and clear single-focus call-to-action buttons." }
-    ]
-  },
-  {
-    topic: "CPA Marketing Masterclass: High-Converting Lead Generation Networks",
-    slugBase: "cpa-marketing-masterclass-lead-generation-networks",
+    title: "Faceless TikTok Shop Product Reviews: Complete Setup Guide",
+    slug: "faceless-tiktok-shop-product-reviews-complete-guide",
     category: "Affiliate Marketing",
-    tags: ["CPA Marketing", "Lead Generation", "MaxBounty", "Affiliate Networks", "Passive Income"],
-    coverImage: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&auto=format&fit=crop&q=80",
-    cpc: "$6.90+",
-    summary: "How to earn $20 to $100 per lead by connecting targeted consumers with insurance, finance, and software trials without requiring a sale.",
+    tags: ["TikTok Shop", "Affiliate", "Ecommerce", "Video Reviews", "Passive Income"],
+    coverImage: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&auto=format&fit=crop&q=80",
+    cpc: "$4.90+",
+    summary: "Discover how creators film engaging aesthetic hands-only product unboxings and demonstration clips to generate thousands in affiliate commissions.",
     sections: [
-      { heading: "1. Cost-Per-Action (CPA) vs Traditional Affiliate Sales", body: "In CPA marketing, you get paid when a user completes a simple action (such as submitting an email, requesting a free quote, or starting a trial) without spending money." },
-      { heading: "2. Top Verified CPA Networks for Beginners", body: "Join established networks like MaxBounty, Perform[cb], and PeerFly that offer thousands of high-converting domestic and international offers." },
-      { heading: "3. Free Organic Search Landing Pages", body: "Build simple comparison review pages answering search queries like 'Free Quote Comparison 2026' to capture organic search traffic with massive conversion rates." }
+      { heading: "1. The Power of Overhead Hands-Only B-Roll", body: "You do not need to show your face or speak on microphone. Overhead tabletop lighting, clean desk mats, and rhythmic background music keep retention high." },
+      { heading: "2. Requesting Free Sample Units from Sellers", body: "Once your creator account qualifies, request free physical samples directly from top TikTok Shop manufacturers in exchange for honest video reviews." },
+      { heading: "3. Tagging Commissionable Product Links", body: "Attach the direct shopping cart link to your video so viewers can purchase with one click without ever leaving the TikTok application." }
     ]
   },
   {
-    topic: "Remote Python & Data Scraping Freelancing: A Beginner's Roadmap",
-    slugBase: "remote-python-data-scraping-freelancing-roadmap",
-    category: "Online Earning",
-    tags: ["Python", "Web Scraping", "Freelancing", "Upwork", "Data Extraction"],
-    coverImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
-    cpc: "$6.20+",
-    summary: "How beginners learn basic Python web scraping scripts with AI assistance to earn $50 to $200 per project on freelance platforms.",
+    title: "How to Build a $1,000/Month AI Newsletter with Beehiiv and Substack",
+    slug: "build-1000-month-ai-newsletter-beehiiv-substack",
+    category: "AI Tools",
+    tags: ["Newsletter", "Beehiiv", "Substack", "AI", "Digital Media"],
+    coverImage: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&auto=format&fit=crop&q=80",
+    cpc: "$5.60+",
+    summary: "A practical step-by-step masterclass on curating the week's top AI developments and monetizing a targeted reader base through programmatic sponsorships.",
     sections: [
-      { heading: "1. Why Data Extraction is in High Demand", body: "Businesses need real-time market data, competitor pricing catalogs, real estate directories, and lead lists scraped from public websites to feed their analytics engines." },
-      { heading: "2. Essential Python Tooling for Beginners", body: "Learn lightweight scraping libraries like BeautifulSoup, Playwright, and pandas to extract structured HTML data and export it into clean CSV or Excel files." },
-      { heading: "3. Packaging Scraping Services on Upwork & Fiverr", body: "Offer turnkey data extraction packages: 'I will scrape 5,000 verified leads from any public directory within 24 hours for $75'." }
+      { heading: "1. The 30-Minute AI Curation Routine", body: "Scan GitHub trending, HuggingFace releases, and tech Twitter. Feed the top 5 announcements into an AI summarizer to extract key takeaways for busy executives." },
+      { heading: "2. Setting Up Native Ad Networks in Beehiiv", body: "Beehiiv features built-in ad networks that automatically match your newsletter with premium tech sponsors paying $20 to $45 per thousand opens." },
+      { heading: "3. Expanding with Digital Resource Upgrades", body: "Offer a 'Top 100 AI Prompts Database' as a lead magnet on LinkedIn to rapidly acquire 2,000+ organic subscribers in your first 60 days." }
     ]
   },
   {
-    topic: "Faceless Audio Podcasts: Earning Programmatic Ad Revenue on Spotify",
-    slugBase: "faceless-audio-podcasts-programmatic-ad-revenue-spotify",
-    category: "Online Earning",
-    tags: ["Podcast", "Spotify", "Audio Monetization", "Ad Revenue", "Passive Income"],
-    coverImage: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80",
+    title: "Midjourney to Merch by Amazon: Passive T-Shirt Royalty Blueprint",
+    slug: "midjourney-merch-by-amazon-passive-tshirt-royalties",
+    category: "AI Tools",
+    tags: ["Midjourney", "Amazon Merch", "Print on Demand", "AI Art", "Royalties"],
+    coverImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80",
     cpc: "$4.70+",
-    summary: "Discover how creators launch automated educational and storytelling audio podcasts and monetize listener streams through dynamic ad insertions.",
+    summary: "How digital artists create commercial vector designs with Midjourney v6 and earn automated royalties on Amazon's massive global marketplace.",
     sections: [
-      { heading: "1. The Growth of Programmatic Audio Advertising", body: "Platforms like Spotify for Podcasters automatically insert targeted audio ads into your episodes, paying creators based on total listener download impressions." },
-      { heading: "2. Best Evergreen Faceless Audio Niches", body: "High-retention genres include bedtime sleep stories, historical documentaries, daily meditation guides, and bite-sized tech news summaries." },
-      { heading: "3. Producing High-Quality Audio on Zero Budget", body: "Generate natural narration using ElevenLabs, add ambient background soundscapes from royalty-free libraries, and publish via free RSS feeds." }
+      { heading: "1. Generating Commercial Vector Graphics with AI", body: "Prompt Midjourney for isolated graphics on white backgrounds with clean outlines and flat vintage color palettes suitable for screen printing." },
+      { heading: "2. Vectorizing and Transparent Upscaling", body: "Convert raster images to crisp 4500x5400 pixel 300 DPI transparent PNGs using free AI vectorizers like Vectorizer.ai and Upscayl." },
+      { heading: "3. Optimizing Amazon Title and Brand Keywords", body: "Structure your product titles with high-intent search terms (e.g. 'Retro Vintage Hiking T-Shirt Outdoor Adventure Graphic Tee') to capture organic Amazon search shoppers." }
     ]
   },
   {
-    topic: "How to Build a $3,000/Month E-Commerce Brand with Printify & Shopify",
-    slugBase: "build-ecommerce-brand-printify-shopify-guide",
-    category: "Online Earning",
-    tags: ["Print on Demand", "Shopify", "Ecommerce", "Printify", "Dropshipping"],
-    coverImage: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=80",
-    cpc: "$5.80+",
-    summary: "A complete masterclass on building an aesthetic apparel and lifestyle merchandise store with zero physical inventory or upfront manufacturing costs.",
+    title: "Top 7 High-Converting VPN & Cybersecurity Affiliate Programs",
+    slug: "top-vpn-cybersecurity-affiliate-programs-high-commissions",
+    category: "Affiliate Marketing",
+    tags: ["VPN", "Cybersecurity", "Affiliate Marketing", "High CPC", "Tech Reviews"],
+    coverImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+    cpc: "$8.90+",
+    summary: "Explore the most lucrative cybersecurity partner programs paying 40% to 70% recurring revenue share and $100+ CPA bounties for VPN referrals.",
     sections: [
-      { heading: "1. The Print-on-Demand E-Commerce Engine", body: "When a customer places an order on your Shopify storefront, Printify automatically prints the custom garment, packages it with your brand invoice, and ships it directly to the customer." },
-      { heading: "2. Finding High-Margin Niche Audiences", body: "Avoid generic graphic tees. Target passionate communities like nurse appreciation, pet lovers, outdoor camping enthusiasts, and minimalist typography lovers." },
-      { heading: "3. Driving Free Organic Sales with Pinterest & TikTok", body: "Post aesthetic mockup videos and lifestyle photo pins highlighting your products in real-world settings with direct links to your store." }
+      { heading: "1. Why Cybersecurity Keywords Have Sky-High CPCs", body: "VPN providers like NordVPN, ExpressVPN, and Surfshark battle fiercely for search market share, driving ad bid prices up to $15+ per click." },
+      { heading: "2. Target Low-Competition Privacy Search Queries", body: "Instead of competitive terms like 'Best VPN', target specific use cases: 'Fastest VPN for Remote Workers in Europe' or 'How to Secure Public Wi-Fi on iPhone'." },
+      { heading: "3. In-Depth Speed and Leak Test Comparisons", body: "Include real DNS leak tests and download speed benchmarks in your review articles to build buyer confidence and achieve double-digit conversion rates." }
     ]
   }
 ];
 
-function generateMarkdownArticle(blueprint, uniqueSuffix) {
+function generateMarkdownArticle(topic) {
   const today = new Date().toISOString().split("T")[0];
-  const title = uniqueSuffix ? `${blueprint.topic} (Ultimate Edition)` : blueprint.topic;
 
-  let bodyContent = `## Executive Summary\n\n${blueprint.summary}\n\n`;
+  let bodyContent = `## Executive Summary\n\n${topic.summary}\n\n`;
 
-  blueprint.sections.forEach((sec) => {
+  topic.sections.forEach((sec) => {
     bodyContent += `## ${sec.heading}\n\n${sec.body}\n\n`;
   });
 
-  bodyContent += `## Action Steps to Implement This Strategy\n\n`;
-  bodyContent += `1. **Select your niche focus**: Pick 1 primary method outlined in this guide and commit for at least 30 continuous days.\n`;
-  bodyContent += `2. **Set up your distribution channel**: Launch your website, newsletter, or platform storefront using free cloud tiers.\n`;
-  bodyContent += `3. **Analyze metrics and scale**: Double down on high-converting traffic sources and optimize your conversion funnel systematically.\n\n`;
+  bodyContent += `## Strategic Action Steps to Implement This Model\n\n`;
+  bodyContent += `1. **Commit to one monetization vertical**: Focus entirely on executing this single blueprint for at least 30 continuous days.\n`;
+  bodyContent += `2. **Build your automated distribution asset**: Set up your blog, storefront, or workflow using 100% free cloud tiers.\n`;
+  bodyContent += `3. **Analyze performance and scale**: Review your conversion data weekly to optimize traffic funnels and multiply your earnings.\n\n`;
 
   bodyContent += `## Frequently Asked Questions (FAQs)\n\n`;
-  bodyContent += `### What is the required startup budget?\n`;
-  bodyContent += `All tools and workflows outlined in this tutorial feature generous free tiers, allowing you to start with **$0 upfront investment**.\n\n`;
-  bodyContent += `### How fast can you expect initial revenue?\n`;
-  bodyContent += `Creators maintaining disciplined daily execution typically generate their first active conversions within **30 to 45 days**.\n`;
+  bodyContent += `### How much capital is required to get started?\n`;
+  bodyContent += `All workflows outlined in this guide use zero-cost cloud platforms and free software tiers, allowing you to start with **$0 upfront budget**.\n\n`;
+  bodyContent += `### When will initial earnings begin to arrive?\n`;
+  bodyContent += `Publishers and creators executing these methods consistently typically generate active conversions within **30 to 45 days**.\n`;
 
   return `---
-title: "${title}"
-excerpt: "${blueprint.summary}"
+title: "${topic.title}"
+excerpt: "${topic.summary}"
 date: "${today}"
-category: "${blueprint.category}"
-tags: ${JSON.stringify(blueprint.tags)}
-coverImage: "${blueprint.coverImage}"
-cpcPotential: "High CPC (${blueprint.cpc})"
+category: "${topic.category}"
+tags: ${JSON.stringify(topic.tags)}
+coverImage: "${topic.coverImage}"
+cpcPotential: "High CPC (${topic.cpc})"
 featured: false
 author:
   name: "EarnSmartly Editorial"
@@ -197,38 +154,23 @@ function run() {
     count = parseInt(args[countIdx + 1], 10) || 7;
   }
 
-  console.log(`Starting Infinite Post Generator (Target: ${count} fresh unique posts)...`);
+  console.log(`Starting Unique Post Generator (Target: ${count} fresh unique posts)...`);
 
   const existingFiles = fs.readdirSync(postsDirectory).map((f) => f.replace(/\.md$/, ""));
   let generated = 0;
 
-  for (const bp of nicheBlueprints) {
+  for (const topic of uniqueMasterTopics) {
     if (generated >= count) break;
 
-    if (!existingFiles.includes(bp.slugBase)) {
-      const filePath = path.join(postsDirectory, `${bp.slugBase}.md`);
-      const content = generateMarkdownArticle(bp, false);
+    // Strict Anti-Duplication check
+    if (!existingFiles.includes(topic.slug)) {
+      const filePath = path.join(postsDirectory, `${topic.slug}.md`);
+      const content = generateMarkdownArticle(topic);
       fs.writeFileSync(filePath, content, "utf8");
-      existingFiles.push(bp.slugBase);
-      console.log(`[${generated + 1}/${count}] Published: ${bp.topic}`);
+      existingFiles.push(topic.slug);
+      console.log(`[${generated + 1}/${count}] Published unique: ${topic.title}`);
       generated++;
     }
-  }
-
-  // If initial pool is exhausted, dynamically generate fresh topic variations with unique timestamp slugs
-  let fallbackIndex = 0;
-  while (generated < count) {
-    const bp = nicheBlueprints[fallbackIndex % nicheBlueprints.length];
-    const uniqueSlug = `${bp.slugBase}-${Date.now().toString().slice(-4)}-${generated}`;
-    if (!existingFiles.includes(uniqueSlug)) {
-      const filePath = path.join(postsDirectory, `${uniqueSlug}.md`);
-      const content = generateMarkdownArticle(bp, true);
-      fs.writeFileSync(filePath, content, "utf8");
-      existingFiles.push(uniqueSlug);
-      console.log(`[${generated + 1}/${count}] Published unique edition: ${bp.topic}`);
-      generated++;
-    }
-    fallbackIndex++;
   }
 
   console.log(`\nSuccessfully published ${generated} 100% unique, non-repeating articles!`);
