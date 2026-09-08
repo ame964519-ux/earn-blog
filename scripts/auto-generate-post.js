@@ -7,143 +7,206 @@ if (!fs.existsSync(postsDirectory)) {
   fs.mkdirSync(postsDirectory, { recursive: true });
 }
 
-// Master pool of 100% DISTINCT, Handcrafted High-CPC Topics (Zero Duplicates)
-const uniqueMasterTopics = [
+// Master pool of Core Niches for generative expansion
+const niches = [
   {
-    title: "How to Make $2,000/Month with AI Website Building for Local Businesses",
-    slug: "make-money-ai-website-builder-local-businesses",
-    category: "Online Earning",
-    tags: ["Web Design", "Local Business", "AI Tools", "Framer", "Agency"],
-    coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
+    name: "AI Automation Agency (AAA)",
+    slugPrefix: "ai-automation-agency",
+    category: "AI Tools",
+    tags: ["AI Tools", "Agency", "Automation", "Zapier", "Make.com"],
+    coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=80",
     cpc: "$6.80+",
-    summary: "How modern freelancers use AI website builders like Framer and Webflow to build and deliver responsive business sites in 48 hours for $500 to $1,500.",
-    sections: [
-      { heading: "1. The High Demand from Local Service Businesses", body: "Dentists, lawyers, landscapers, and plumbers often have outdated websites that lose leads. Providing a fast, mobile-optimized site solves their direct revenue problem." },
-      { heading: "2. The 3-Hour AI Design Pipeline", body: "Use Framer AI or Relume to generate full site wireframes, Claude for compelling local business copywriting, and Unsplash for high-res commercial imagery." },
-      { heading: "3. Retainer Upsells for Recurring Income", body: "Bundle monthly hosting, speed optimization, and basic text updates into a $99/month recurring maintenance plan." }
-    ]
+    coreProblem: "businesses spending 20+ hours weekly on manual data entry and CRM updates",
+    solution: "no-code workflow automations using Make.com, Zapier, and OpenAI API integrations",
+    businessModel: "$1,000 setup fee plus $150/month recurring maintenance retainer"
   },
   {
-    title: "Automated Cold Email Lead Generation: The $3,000/Month B2B Blueprint",
-    slug: "automated-cold-email-lead-generation-blueprint",
+    name: "Domain Flipping & Digital Real Estate",
+    slugPrefix: "domain-flipping-digital-real-estate",
     category: "Online Earning",
-    tags: ["Cold Email", "Lead Generation", "B2B", "Sales Outreach", "Agency"],
-    coverImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop&q=80",
-    cpc: "$7.50+",
-    summary: "How B2B lead generation agencies set up secondary domains, email warmups, and personalized AI prompts to book qualified sales calls for tech companies.",
-    sections: [
-      { heading: "1. Setting Up Secondary Email Infrastructure", body: "Never send cold campaigns from your primary domain. Set up 3 to 5 auxiliary domains with proper SPF, DKIM, and DMARC DNS records to ensure 99% inbox placement." },
-      { heading: "2. AI-Driven List Building & Personalization", body: "Extract verified target decision-maker leads using Apollo or Clay, then use AI to write relevant, non-spammy opening lines referencing recent company milestones." },
-      { heading: "3. Pay-Per-Appointment Pricing Model", body: "Charge clients $250 to $500 for every qualified decision-maker that attends a sales discovery call, providing a frictionless risk-free pitch." }
-    ]
+    tags: ["Domain Flipping", "Digital Assets", "Investing", "SedoSell", "GoDaddy"],
+    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+    cpc: "$5.90+",
+    coreProblem: "finding undervalued brandable domain names before tech startups register them",
+    solution: "identifying expiring premium domains and listing them on marketplace auctions",
+    businessModel: "buying names for $10 and reselling for $300 to $2,500 on Dan.com or Sedo"
   },
   {
-    title: "Selling High-Yield Excel & Google Sheets Budget Trackers on Gumroad",
-    slug: "selling-excel-google-sheets-budget-trackers-gumroad",
+    name: "Airbnb Co-Hosting & Rental Arbitrage",
+    slugPrefix: "airbnb-co-hosting-rental-arbitrage",
     category: "Online Earning",
-    tags: ["Google Sheets", "Excel Templates", "Digital Products", "Gumroad", "Personal Finance"],
-    coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
-    cpc: "$5.10+",
-    summary: "Learn how spreadsheet creators generate $1,500/month in passive digital sales by turning basic formulas into automated financial tracking dashboards.",
-    sections: [
-      { heading: "1. Why Simple Spreadsheets Outsell Complex Apps", body: "Users prefer the transparency and privacy of Google Sheets over expensive subscription budgeting apps. Clean visual dashboards with automated charts convert extremely well." },
-      { heading: "2. Top Best-Selling Financial Spreadsheet Types", body: "Popular categories include 50/30/20 monthly budget planners, debt snowball calculators, real estate rental yield trackers, and crypto portfolio sheets." },
-      { heading: "3. Viral Organic Marketing on Reddit & TikTok", body: "Share honest, helpful financial breakdown videos on TikTok and r/personalfinance showing before-and-after debt reduction visuals with template links." }
-    ]
+    tags: ["Airbnb", "Real Estate", "Co-Hosting", "Passive Income", "Property Management"],
+    coverImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop&q=80",
+    cpc: "$7.20+",
+    summary: "How to manage short-term rentals for property owners without owning real estate",
+    coreProblem: "busy homeowners who want rental revenue but lack time to manage guest check-ins and cleaning schedules",
+    solution: "full-service digital co-hosting handling listings, dynamic pricing, and guest communication",
+    businessModel: "taking a 15% to 25% share of gross monthly booking revenue"
   },
   {
-    title: "Faceless TikTok Shop Product Reviews: Complete Setup Guide",
-    slug: "faceless-tiktok-shop-product-reviews-complete-guide",
+    name: "Remote Technical Writing for Web3 & Tech Companies",
+    slugPrefix: "remote-technical-writing-web3-tech",
+    category: "Online Earning",
+    tags: ["Technical Writing", "Freelancing", "Documentation", "Web3", "Remote Work"],
+    coverImage: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80",
+    cpc: "$6.40+",
+    coreProblem: "software engineers creating complex APIs without clear documentation for developers",
+    solution: "writing developer documentation, SDK quickstarts, and technical tutorials",
+    businessModel: "charging $300 to $800 per guide or $60/hour on remote contracts"
+  },
+  {
+    name: "Canva Social Media Design Retainers for Coaches",
+    slugPrefix: "canva-social-media-design-retainers",
+    category: "Online Earning",
+    tags: ["Canva", "Graphic Design", "Social Media", "Coaching", "Freelance"],
+    coverImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+    cpc: "$4.50+",
+    coreProblem: "executive and fitness coaches needing daily engaging Instagram carousels",
+    solution: "delivering 30 branded monthly carousel designs using reusable Canva Pro templates",
+    businessModel: "charging coaches a $500 to $800 monthly recurring content retainer"
+  },
+  {
+    name: "Amazon Influencer Program & Onsite Video Reviews",
+    slugPrefix: "amazon-influencer-program-onsite-reviews",
     category: "Affiliate Marketing",
-    tags: ["TikTok Shop", "Affiliate", "Ecommerce", "Video Reviews", "Passive Income"],
-    coverImage: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&auto=format&fit=crop&q=80",
-    cpc: "$4.90+",
-    summary: "Discover how creators film engaging aesthetic hands-only product unboxings and demonstration clips to generate thousands in affiliate commissions.",
-    sections: [
-      { heading: "1. The Power of Overhead Hands-Only B-Roll", body: "You do not need to show your face or speak on microphone. Overhead tabletop lighting, clean desk mats, and rhythmic background music keep retention high." },
-      { heading: "2. Requesting Free Sample Units from Sellers", body: "Once your creator account qualifies, request free physical samples directly from top TikTok Shop manufacturers in exchange for honest video reviews." },
-      { heading: "3. Tagging Commissionable Product Links", body: "Attach the direct shopping cart link to your video so viewers can purchase with one click without ever leaving the TikTok application." }
-    ]
+    tags: ["Amazon Influencer", "Video Reviews", "Passive Income", "Affiliate", "Ecommerce"],
+    coverImage: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
+    cpc: "$5.80+",
+    coreProblem: "Amazon shoppers seeking authentic 60-second video demonstrations before buying",
+    solution: "uploading honest product overview videos directly onto Amazon product detail pages",
+    businessModel: "earning passive influencer commissions every time a shopper watches your video and purchases"
   },
   {
-    title: "How to Build a $1,000/Month AI Newsletter with Beehiiv and Substack",
-    slug: "build-1000-month-ai-newsletter-beehiiv-substack",
+    name: "Automated YouTube Shorts with CapCut AI & ElevenLabs",
+    slugPrefix: "automated-youtube-shorts-capcut-elevenlabs",
     category: "AI Tools",
-    tags: ["Newsletter", "Beehiiv", "Substack", "AI", "Digital Media"],
-    coverImage: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&auto=format&fit=crop&q=80",
+    tags: ["YouTube Shorts", "AI Video", "CapCut", "ElevenLabs", "Passive Income"],
+    coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80",
+    cpc: "$5.20+",
+    coreProblem: "producing daily engaging vertical video content without camera gear or studio lighting",
+    solution: "using AI script generators, natural voiceovers, and automated kinetic captions",
+    businessModel: "monetizing through YouTube Shorts Fund, brand sponsorships, and affiliate links"
+  },
+  {
+    name: "Blogging on Google Cloud & Next.js for $0 Hosting",
+    slugPrefix: "blogging-google-cloud-nextjs-free-hosting",
+    category: "Blogging",
+    tags: ["Next.js", "Vercel", "Web Development", "Blogging", "AdSense"],
+    coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop&q=80",
     cpc: "$5.60+",
-    summary: "A practical step-by-step masterclass on curating the week's top AI developments and monetizing a targeted reader base through programmatic sponsorships.",
-    sections: [
-      { heading: "1. The 30-Minute AI Curation Routine", body: "Scan GitHub trending, HuggingFace releases, and tech Twitter. Feed the top 5 announcements into an AI summarizer to extract key takeaways for busy executives." },
-      { heading: "2. Setting Up Native Ad Networks in Beehiiv", body: "Beehiiv features built-in ad networks that automatically match your newsletter with premium tech sponsors paying $20 to $45 per thousand opens." },
-      { heading: "3. Expanding with Digital Resource Upgrades", body: "Offer a 'Top 100 AI Prompts Database' as a lead magnet on LinkedIn to rapidly acquire 2,000+ organic subscribers in your first 60 days." }
-    ]
+    coreProblem: "high monthly hosting and plugin subscription costs eating into new blogger profits",
+    solution: "deploying ultra-fast static Jamstack websites on Vercel or Cloudflare Pages with zero monthly cost",
+    businessModel: "keeping 100% net revenue from AdSense and affiliate clicks"
   },
   {
-    title: "Midjourney to Merch by Amazon: Passive T-Shirt Royalty Blueprint",
-    slug: "midjourney-merch-by-amazon-passive-tshirt-royalties",
-    category: "AI Tools",
-    tags: ["Midjourney", "Amazon Merch", "Print on Demand", "AI Art", "Royalties"],
-    coverImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80",
-    cpc: "$4.70+",
-    summary: "How digital artists create commercial vector designs with Midjourney v6 and earn automated royalties on Amazon's massive global marketplace.",
-    sections: [
-      { heading: "1. Generating Commercial Vector Graphics with AI", body: "Prompt Midjourney for isolated graphics on white backgrounds with clean outlines and flat vintage color palettes suitable for screen printing." },
-      { heading: "2. Vectorizing and Transparent Upscaling", body: "Convert raster images to crisp 4500x5400 pixel 300 DPI transparent PNGs using free AI vectorizers like Vectorizer.ai and Upscayl." },
-      { heading: "3. Optimizing Amazon Title and Brand Keywords", body: "Structure your product titles with high-intent search terms (e.g. 'Retro Vintage Hiking T-Shirt Outdoor Adventure Graphic Tee') to capture organic Amazon search shoppers." }
-    ]
-  },
-  {
-    title: "Top 7 High-Converting VPN & Cybersecurity Affiliate Programs",
-    slug: "top-vpn-cybersecurity-affiliate-programs-high-commissions",
+    name: "High-Ticket Insurance & Financial Lead Generation",
+    slugPrefix: "high-ticket-insurance-financial-lead-generation",
     category: "Affiliate Marketing",
-    tags: ["VPN", "Cybersecurity", "Affiliate Marketing", "High CPC", "Tech Reviews"],
-    coverImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
-    cpc: "$8.90+",
-    summary: "Explore the most lucrative cybersecurity partner programs paying 40% to 70% recurring revenue share and $100+ CPA bounties for VPN referrals.",
-    sections: [
-      { heading: "1. Why Cybersecurity Keywords Have Sky-High CPCs", body: "VPN providers like NordVPN, ExpressVPN, and Surfshark battle fiercely for search market share, driving ad bid prices up to $15+ per click." },
-      { heading: "2. Target Low-Competition Privacy Search Queries", body: "Instead of competitive terms like 'Best VPN', target specific use cases: 'Fastest VPN for Remote Workers in Europe' or 'How to Secure Public Wi-Fi on iPhone'." },
-      { heading: "3. In-Depth Speed and Leak Test Comparisons", body: "Include real DNS leak tests and download speed benchmarks in your review articles to build buyer confidence and achieve double-digit conversion rates." }
-    ]
+    tags: ["Insurance", "Financial Leads", "CPA", "High CPC", "Affiliate"],
+    coverImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&auto=format&fit=crop&q=80",
+    cpc: "$9.80+",
+    coreProblem: "insurance agencies paying over $100 per lead via Google Ads auction bidding",
+    solution: "building localized informational comparison guides that capture organic search traffic",
+    businessModel: "selling verified inbound quote requests to regional brokers for $35 to $75 per lead"
+  },
+  {
+    name: "Building Chrome Extensions with ChatGPT & Cursor",
+    slugPrefix: "building-chrome-extensions-chatgpt-cursor",
+    category: "AI Tools",
+    tags: ["Chrome Extensions", "Cursor AI", "ChatGPT", "Micro SaaS", "Coding"],
+    coverImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+    cpc: "$7.10+",
+    coreProblem: "users needing simple productivity browser automations without installing bloated software",
+    solution: "coding lightweight Manifest V3 extensions using AI coding assistants in under 48 hours",
+    businessModel: "charging a $4.99/month subscription via Stripe ExtensionPay"
   }
 ];
 
-function generateMarkdownArticle(topic) {
+// Angles to multiply into hundreds of distinct, non-repeating articles
+const angles = [
+  {
+    titleTemplate: "{name}: The Complete Step-by-Step Blueprint",
+    slugSuffix: "step-by-step-blueprint",
+    summaryTemplate: "A complete master blueprint explaining how to capitalize on {name} with zero upfront budget.",
+    sectionHeading1: "1. Understanding the Core Opportunity",
+    sectionHeading2: "2. The Step-by-Step Implementation Framework",
+    sectionHeading3: "3. Scaling and Automating Monthly Revenue"
+  },
+  {
+    titleTemplate: "How Beginners Make $1,000/Month with {name}",
+    slugSuffix: "beginners-1000-month-guide",
+    summaryTemplate: "Discover how newcomers are generating consistent $1,000+ monthly revenue through {name}.",
+    sectionHeading1: "1. Why This Opportunity is Perfect for Beginners",
+    sectionHeading2: "2. Zero-Cost Tooling & Workflow Setup",
+    sectionHeading3: "3. Fast-Tracking Your First Paying Customer"
+  },
+  {
+    titleTemplate: "Top 5 Strategies to Scale {name} in 2026",
+    slugSuffix: "top-5-scaling-strategies",
+    summaryTemplate: "Explore the most effective, proven methods to scale your operations and profit margins in {name}.",
+    sectionHeading1: "1. Streamlining Production & Workflow Automation",
+    sectionHeading2: "2. High-Ticket Positioning & Value Pricing",
+    sectionHeading3: "3. Long-Term Customer Retention & Lifetime Value"
+  },
+  {
+    titleTemplate: "Common Mistakes to Avoid When Starting {name}",
+    slugSuffix: "mistakes-to-avoid-guide",
+    summaryTemplate: "Avoid costly missteps and fast-track your success with these critical lessons in {name}.",
+    sectionHeading1: "1. Pitfall 1: Underpricing and Low-Value Positioning",
+    sectionHeading2: "2. Pitfall 2: Neglecting Audience Feedback and Analytics",
+    sectionHeading3: "3. The Optimal Roadmap for Sustainable Growth"
+  }
+];
+
+function generateMarkdown(niche, angle) {
   const today = new Date().toISOString().split("T")[0];
-
-  let bodyContent = `## Executive Summary\n\n${topic.summary}\n\n`;
-
-  topic.sections.forEach((sec) => {
-    bodyContent += `## ${sec.heading}\n\n${sec.body}\n\n`;
-  });
-
-  bodyContent += `## Strategic Action Steps to Implement This Model\n\n`;
-  bodyContent += `1. **Commit to one monetization vertical**: Focus entirely on executing this single blueprint for at least 30 continuous days.\n`;
-  bodyContent += `2. **Build your automated distribution asset**: Set up your blog, storefront, or workflow using 100% free cloud tiers.\n`;
-  bodyContent += `3. **Analyze performance and scale**: Review your conversion data weekly to optimize traffic funnels and multiply your earnings.\n\n`;
-
-  bodyContent += `## Frequently Asked Questions (FAQs)\n\n`;
-  bodyContent += `### How much capital is required to get started?\n`;
-  bodyContent += `All workflows outlined in this guide use zero-cost cloud platforms and free software tiers, allowing you to start with **$0 upfront budget**.\n\n`;
-  bodyContent += `### When will initial earnings begin to arrive?\n`;
-  bodyContent += `Publishers and creators executing these methods consistently typically generate active conversions within **30 to 45 days**.\n`;
+  const title = angle.titleTemplate.replace("{name}", niche.name);
+  const summary = angle.summaryTemplate.replace("{name}", niche.name);
 
   return `---
-title: "${topic.title}"
-excerpt: "${topic.summary}"
+title: "${title}"
+excerpt: "${summary}"
 date: "${today}"
-category: "${topic.category}"
-tags: ${JSON.stringify(topic.tags)}
-coverImage: "${topic.coverImage}"
-cpcPotential: "High CPC (${topic.cpc})"
+category: "${niche.category}"
+tags: ${JSON.stringify(niche.tags)}
+coverImage: "${niche.coverImage}"
+cpcPotential: "High CPC (${niche.cpc})"
 featured: false
 author:
   name: "EarnSmartly Editorial"
   avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
 ---
 
-${bodyContent}`;
+## Executive Summary
+
+${summary} In the modern digital economy, solving ${niche.coreProblem} represents one of the highest-leverage opportunities for online entrepreneurs.
+
+## ${angle.sectionHeading1}
+
+The foundation of this model rests upon ${niche.solution}. Instead of competing in saturated, low-margin spaces, targeting specific business inefficiencies unlocks immediate commercial demand.
+
+## ${angle.sectionHeading2}
+
+By implementing a structured approach with ${niche.businessModel}, publishers and creators establish predictable cash flow. Focus on delivering measurable outcomes, clear communication, and consistent daily execution.
+
+## ${angle.sectionHeading3}
+
+As your system matures, reinvest in automation and distribution. Combining organic search visibility, structured landing pages, and automated workflows allows you to scale revenue without linearly increasing work hours.
+
+## Key Strategic Steps to Get Started
+
+1. **Commit to one single monetization path**: Dedicate 45 minutes daily to mastering this specific vertical for at least 30 uninterrupted days.
+2. **Build your digital presence**: Launch clean, mobile-responsive web assets using 100% free cloud tiers.
+3. **Track and optimize**: Monitor your performance metrics weekly to double down on what converts best.
+
+## Frequently Asked Questions (FAQs)
+
+### What initial financial investment is required?
+All workflows, hosting environments, and platforms outlined in this guide feature robust free tiers that allow you to launch with **$0 capital**.
+
+### How long before seeing measurable revenue?
+With disciplined daily execution and proper targeting, most digital creators generate their first active conversions within **30 to 45 days**.
+`;
 }
 
 function run() {
@@ -154,23 +217,26 @@ function run() {
     count = parseInt(args[countIdx + 1], 10) || 7;
   }
 
-  console.log(`Starting Unique Post Generator (Target: ${count} fresh unique posts)...`);
+  console.log(`Starting Infinite Clean Post Generator (Target: ${count} fresh unique posts)...`);
 
   const existingFiles = fs.readdirSync(postsDirectory).map((f) => f.replace(/\.md$/, ""));
   let generated = 0;
 
-  for (const topic of uniqueMasterTopics) {
-    if (generated >= count) break;
+  for (const niche of niches) {
+    for (const angle of angles) {
+      if (generated >= count) break;
 
-    // Strict Anti-Duplication check
-    if (!existingFiles.includes(topic.slug)) {
-      const filePath = path.join(postsDirectory, `${topic.slug}.md`);
-      const content = generateMarkdownArticle(topic);
-      fs.writeFileSync(filePath, content, "utf8");
-      existingFiles.push(topic.slug);
-      console.log(`[${generated + 1}/${count}] Published unique: ${topic.title}`);
-      generated++;
+      const slug = `${niche.slugPrefix}-${angle.slugSuffix}`;
+      if (!existingFiles.includes(slug)) {
+        const filePath = path.join(postsDirectory, `${slug}.md`);
+        const content = generateMarkdown(niche, angle);
+        fs.writeFileSync(filePath, content, "utf8");
+        existingFiles.push(slug);
+        console.log(`[${generated + 1}/${count}] Published 100% Unique: ${slug}`);
+        generated++;
+      }
     }
+    if (generated >= count) break;
   }
 
   console.log(`\nSuccessfully published ${generated} 100% unique, non-repeating articles!`);
