@@ -4,7 +4,7 @@ excerpt: "Discover how freelancers write abandoned cart and welcome email flows 
 date: "2026-09-01"
 category: "AI Tools"
 tags: ["Copywriting","Email Marketing","Ecommerce","Klaviyo","AI Writing"]
-coverImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.70+)"
 featured: false
 author:

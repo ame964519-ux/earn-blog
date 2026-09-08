@@ -4,7 +4,7 @@ excerpt: "How digital designers earn $1,000+ per month creating reusable social 
 date: "2026-09-01"
 category: "Online Earning"
 tags: ["Canva","Etsy","Digital Products","Passive Income","Graphic Design"]
-coverImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($4.10+)"
 featured: false
 author:

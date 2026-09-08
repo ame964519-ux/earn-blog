@@ -4,7 +4,7 @@ excerpt: "A step-by-step masterclass on designing aesthetic Notion productivity 
 date: "2026-08-29"
 category: "Online Earning"
 tags: ["Notion Templates","Digital Products","Gumroad","Passive Income","Productivity"]
-coverImage: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($4.90+)"
 featured: false
 author:

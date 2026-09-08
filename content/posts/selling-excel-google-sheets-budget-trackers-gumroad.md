@@ -4,7 +4,7 @@ excerpt: "Learn how spreadsheet creators generate $1,500/month in passive digita
 date: "2026-09-03"
 category: "Online Earning"
 tags: ["Google Sheets","Excel Templates","Digital Products","Gumroad","Personal Finance"]
-coverImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.10+)"
 featured: false
 author:

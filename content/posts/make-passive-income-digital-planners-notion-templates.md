@@ -4,7 +4,7 @@ excerpt: "Turn productivity workflows into recurring digital downloads on Gumroa
 date: "2026-08-26"
 category: "Online Earning"
 tags: ["Notion","Digital Products","Templates","Passive Income","Etsy"]
-coverImage: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($4.30+)"
 featured: false
 author:

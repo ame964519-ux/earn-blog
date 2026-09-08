@@ -4,7 +4,7 @@ excerpt: "How digital artists create commercial vector designs with Midjourney v
 date: "2026-09-03"
 category: "AI Tools"
 tags: ["Midjourney","Amazon Merch","Print on Demand","AI Art","Royalties"]
-coverImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1542744094-3a31727f30ea?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($4.70+)"
 featured: false
 author:
