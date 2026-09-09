@@ -4,7 +4,7 @@ excerpt: "Learn how creators publish puzzle books, daily gratitude journals, and
 date: "2026-08-28"
 category: "Online Earning"
 tags: ["Amazon KDP","Self Publishing","Passive Income","Digital Products","Side Hustle"]
-coverImage: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($4.80+)"
 featured: false
 author:

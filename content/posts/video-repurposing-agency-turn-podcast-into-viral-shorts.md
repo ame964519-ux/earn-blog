@@ -4,7 +4,7 @@ excerpt: "Learn how modern agencies charge podcasters $1,000 to $2,500/month to 
 date: "2026-08-29"
 category: "AI Tools"
 tags: ["Video Repurposing","Shorts","Reels","AI Video","Agency Business"]
-coverImage: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.30+)"
 featured: false
 author:

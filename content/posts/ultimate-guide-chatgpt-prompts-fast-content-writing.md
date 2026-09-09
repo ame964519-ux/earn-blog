@@ -4,7 +4,7 @@ excerpt: "Copy-paste prompt chains that allow content creators to write comprehe
 date: "2026-08-26"
 category: "AI Tools"
 tags: ["ChatGPT","Prompts","Content Writing","Copywriting","Productivity"]
-coverImage: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($4.50+)"
 featured: false
 author:

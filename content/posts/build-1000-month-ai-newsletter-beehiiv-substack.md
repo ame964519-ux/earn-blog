@@ -4,7 +4,7 @@ excerpt: "A practical step-by-step masterclass on curating the week's top AI dev
 date: "2026-09-03"
 category: "AI Tools"
 tags: ["Newsletter","Beehiiv","Substack","AI","Digital Media"]
-coverImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.60+)"
 featured: false
 author:

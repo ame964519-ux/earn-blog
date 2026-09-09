@@ -4,7 +4,7 @@ excerpt: "How B2B lead generation agencies set up secondary domains, email warmu
 date: "2026-09-03"
 category: "Online Earning"
 tags: ["Cold Email","Lead Generation","B2B","Sales Outreach","Agency"]
-coverImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($7.50+)"
 featured: false
 author:
