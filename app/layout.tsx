@@ -90,6 +90,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="ObardLCi17g-v12gl6Omr4qoHEiYQZ6yl3_77QQpo0k" />
+        <meta name="google-adsense-account" content="ca-pub-4145844582801872" />
         {/* Google AdSense Script Integration */}
         {siteConfig.adsense.enabled &&
           !siteConfig.adsense.publisherId.includes("XXXX") && (
