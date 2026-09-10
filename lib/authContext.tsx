@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { supabase, isSupabaseConfigured } from "./supabase";
 
 export interface User {
   id: string;
@@ -41,7 +42,6 @@ const AUTH_STORAGE_KEY = "earnsmartly_user_session";
 const BOOKMARKS_STORAGE_KEY = "earnsmartly_user_bookmarks";
 const USERS_DB_KEY = "earnsmartly_registered_users";
 
-// Default registered accounts for testing
 const INITIAL_REGISTERED_USERS = [
   {
     name: "Admin Abdullah",
@@ -59,57 +59,158 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [bookmarks, setBookmarks] = useState<string[]>([]);
 
-  // Initialize DB and load session on mount
+  // Load session and bookmarks
   useEffect(() => {
     try {
-      // Ensure seed accounts exist in user database
+      if (isSupabaseConfigured()) {
+        // 1. Supabase Session Listener
+        supabase.auth.getSession().then(({ data: { session } }) => {
+          if (session?.user) {
+            const mappedUser: User = {
+              id: session.user.id,
+              name: session.user.user_metadata?.name || session.user.email?.split("@")[0] || "User",
+              email: session.user.email || "",
+              avatar: session.user.user_metadata?.avatar_url || `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
+              joinedDate: new Date(session.user.created_at).toISOString().split("T")[0],
+            };
+            setUser(mappedUser);
+            loadSupabaseBookmarks(session.user.id);
+          } else {
+            loadLocalSession();
+          }
+        });
+
+        const { data: authListener } = supabase.auth.onAuthStateChange(
+          async (event, session) => {
+            if (session?.user) {
+              const mappedUser: User = {
+                id: session.user.id,
+                name: session.user.user_metadata?.name || session.user.email?.split("@")[0] || "User",
+                email: session.user.email || "",
+                avatar: session.user.user_metadata?.avatar_url || `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
+                joinedDate: new Date(session.user.created_at).toISOString().split("T")[0],
+              };
+              setUser(mappedUser);
+              loadSupabaseBookmarks(session.user.id);
+            } else if (event === "SIGNED_OUT") {
+              setUser(null);
+              setBookmarks([]);
+              localStorage.removeItem(AUTH_STORAGE_KEY);
+              localStorage.removeItem(BOOKMARKS_STORAGE_KEY);
+            }
+          }
+        );
+
+        return () => {
+          authListener?.subscription.unsubscribe();
+        };
+      } else {
+        loadLocalSession();
+      }
+    } catch (e) {
+      console.error("Auth initialization error:", e);
+      loadLocalSession();
+    }
+  }, []);
+
+  const loadLocalSession = () => {
+    try {
       const existingUsersRaw = localStorage.getItem(USERS_DB_KEY);
       if (!existingUsersRaw) {
         localStorage.setItem(USERS_DB_KEY, JSON.stringify(INITIAL_REGISTERED_USERS));
       } else {
         const users = JSON.parse(existingUsersRaw);
-        // Ensure admin account is always present
         if (!users.some((u: any) => u.email === "ame964519@gmail.com")) {
           users.push(INITIAL_REGISTERED_USERS[0]);
           localStorage.setItem(USERS_DB_KEY, JSON.stringify(users));
         }
       }
 
-      // Load active session
       const savedUser = localStorage.getItem(AUTH_STORAGE_KEY);
       if (savedUser) {
         setUser(JSON.parse(savedUser));
       }
 
-      // Load bookmarks
       const savedBookmarks = localStorage.getItem(BOOKMARKS_STORAGE_KEY);
       if (savedBookmarks) {
         setBookmarks(JSON.parse(savedBookmarks));
       }
     } catch (e) {
-      console.error("Auth session load error:", e);
+      console.error("Local session load error:", e);
     }
-  }, []);
+  };
+
+  const loadSupabaseBookmarks = async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from("bookmarks")
+        .select("post_slug")
+        .eq("user_id", userId);
+
+      if (!error && data) {
+        const slugs = data.map((b) => b.post_slug);
+        setBookmarks(slugs);
+        localStorage.setItem(BOOKMARKS_STORAGE_KEY, JSON.stringify(slugs));
+      }
+    } catch (err) {
+      console.warn("Could not fetch Supabase bookmarks:", err);
+    }
+  };
 
   const signup = async (name: string, email: string, password: string): Promise<AuthResponse> => {
+    const trimmedEmail = email.trim().toLowerCase();
+    const trimmedName = name.trim();
+
+    if (!trimmedName || !trimmedEmail || !password) {
+      return { success: false, error: "Please fill in all registration fields." };
+    }
+
+    if (password.length < 6) {
+      return { success: false, error: "Password must be at least 6 characters long." };
+    }
+
+    // If Supabase is connected
+    if (isSupabaseConfigured()) {
+      try {
+        const { data, error } = await supabase.auth.signUp({
+          email: trimmedEmail,
+          password: password,
+          options: {
+            data: {
+              name: trimmedName,
+              avatar_url: `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
+            },
+          },
+        });
+
+        if (error) {
+          return { success: false, error: error.message };
+        }
+
+        if (data.user) {
+          const newUser: User = {
+            id: data.user.id,
+            name: trimmedName,
+            email: trimmedEmail,
+            avatar: `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
+            joinedDate: new Date().toISOString().split("T")[0],
+          };
+          setUser(newUser);
+          localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newUser));
+          return { success: true };
+        }
+      } catch (err: any) {
+        console.error("Supabase signup exception:", err);
+      }
+    }
+
+    // Local / Offline Fallback Mode
     try {
-      const trimmedEmail = email.trim().toLowerCase();
-      const trimmedName = name.trim();
-
-      if (!trimmedName || !trimmedEmail || !password) {
-        return { success: false, error: "Please fill in all registration fields." };
-      }
-
-      if (password.length < 6) {
-        return { success: false, error: "Password must be at least 6 characters long." };
-      }
-
       const existingUsersRaw = localStorage.getItem(USERS_DB_KEY);
       const existingUsers: Array<{ name: string; email: string; password?: string }> = existingUsersRaw
         ? JSON.parse(existingUsersRaw)
         : [...INITIAL_REGISTERED_USERS];
 
-      // Check if user already exists
       const alreadyExists = existingUsers.some((u) => u.email.toLowerCase() === trimmedEmail);
       if (alreadyExists) {
         return {
@@ -118,17 +219,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         };
       }
 
-      // Save new user record
-      const newUserRecord = {
+      existingUsers.push({
         name: trimmedName,
         email: trimmedEmail,
         password: password,
-      };
-
-      existingUsers.push(newUserRecord);
+      });
       localStorage.setItem(USERS_DB_KEY, JSON.stringify(existingUsers));
 
-      // Create session
       const newUser: User = {
         id: `user_${Date.now()}`,
         name: trimmedName,
@@ -141,25 +238,54 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(newUser));
       return { success: true };
     } catch (e) {
-      console.error("Signup error:", e);
       return { success: false, error: "Failed to create account. Please try again." };
     }
   };
 
   const login = async (email: string, password: string): Promise<AuthResponse> => {
-    try {
-      const trimmedEmail = email.trim().toLowerCase();
+    const trimmedEmail = email.trim().toLowerCase();
 
-      if (!trimmedEmail || !password) {
-        return { success: false, error: "Please enter both your email address and password." };
+    if (!trimmedEmail || !password) {
+      return { success: false, error: "Please enter both your email address and password." };
+    }
+
+    // If Supabase is connected
+    if (isSupabaseConfigured()) {
+      try {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email: trimmedEmail,
+          password: password,
+        });
+
+        if (error) {
+          return { success: false, error: error.message };
+        }
+
+        if (data.user) {
+          const loggedUser: User = {
+            id: data.user.id,
+            name: data.user.user_metadata?.name || trimmedEmail.split("@")[0],
+            email: trimmedEmail,
+            avatar: data.user.user_metadata?.avatar_url || `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
+            joinedDate: new Date(data.user.created_at).toISOString().split("T")[0],
+          };
+          setUser(loggedUser);
+          localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(loggedUser));
+          loadSupabaseBookmarks(data.user.id);
+          return { success: true };
+        }
+      } catch (err: any) {
+        console.error("Supabase login exception:", err);
       }
+    }
 
+    // Local / Offline Fallback Mode
+    try {
       const existingUsersRaw = localStorage.getItem(USERS_DB_KEY);
       const existingUsers: Array<{ name: string; email: string; password?: string }> = existingUsersRaw
         ? JSON.parse(existingUsersRaw)
         : [...INITIAL_REGISTERED_USERS];
 
-      // 1. STRICT CHECK: Does user exist?
       const found = existingUsers.find((u) => u.email.toLowerCase() === trimmedEmail);
       if (!found) {
         return {
@@ -168,7 +294,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         };
       }
 
-      // 2. STRICT CHECK: Does password match?
       if (found.password !== password) {
         return {
           success: false,
@@ -176,7 +301,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         };
       }
 
-      // Valid credentials -> Log user in
       const loggedUser: User = {
         id: `user_${Date.now()}`,
         name: found.name,
@@ -189,27 +313,54 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(loggedUser));
       return { success: true };
     } catch (e) {
-      console.error("Login error:", e);
       return { success: false, error: "Authentication system error. Please try again." };
     }
   };
 
-  const logout = () => {
+  const logout = async () => {
+    if (isSupabaseConfigured()) {
+      try {
+        await supabase.auth.signOut();
+      } catch (e) {
+        console.warn("Supabase signout warning:", e);
+      }
+    }
     setUser(null);
+    setBookmarks([]);
     localStorage.removeItem(AUTH_STORAGE_KEY);
+    localStorage.removeItem(BOOKMARKS_STORAGE_KEY);
   };
 
-  const toggleBookmark = (slug: string) => {
-    setBookmarks((prev) => {
-      let updated: string[];
-      if (prev.includes(slug)) {
-        updated = prev.filter((s) => s !== slug);
-      } else {
-        updated = [...prev, slug];
+  const toggleBookmark = async (slug: string) => {
+    let updated: string[];
+    const isCurrentlySaved = bookmarks.includes(slug);
+
+    if (isCurrentlySaved) {
+      updated = bookmarks.filter((s) => s !== slug);
+    } else {
+      updated = [...bookmarks, slug];
+    }
+
+    setBookmarks(updated);
+    localStorage.setItem(BOOKMARKS_STORAGE_KEY, JSON.stringify(updated));
+
+    // Sync with Supabase Cloud DB if user is logged in
+    if (isSupabaseConfigured() && user) {
+      try {
+        if (isCurrentlySaved) {
+          await supabase
+            .from("bookmarks")
+            .delete()
+            .match({ user_id: user.id, post_slug: slug });
+        } else {
+          await supabase
+            .from("bookmarks")
+            .insert([{ user_id: user.id, post_slug: slug }]);
+        }
+      } catch (dbErr) {
+        console.warn("Supabase bookmark sync error:", dbErr);
       }
-      localStorage.setItem(BOOKMARKS_STORAGE_KEY, JSON.stringify(updated));
-      return updated;
-    });
+    }
   };
 
   const isBookmarked = (slug: string) => {
