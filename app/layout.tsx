@@ -66,6 +66,8 @@ export const metadata: Metadata = {
   },
 };
 
+import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: {
@@ -101,6 +103,27 @@ export default function RootLayout({
               crossOrigin="anonymous"
             />
           )}
+        {/* Google Analytics 4 (GA4) Live Traffic Tracker */}
+        {siteConfig.analytics?.enabled && siteConfig.analytics?.gaId && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.gaId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${siteConfig.analytics.gaId}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

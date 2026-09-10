@@ -18,6 +18,11 @@ export const siteConfig = {
     publisherId: "ca-pub-4145844582801872", // Connected User AdSense ID
     enabled: true,
   },
+  // Google Analytics 4 (GA4) Live Traffic Tracker:
+  analytics: {
+    gaId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-EARNSMARTLY",
+    enabled: true,
+  },
   navigation: [
     { name: "Home", href: "/" },
     { name: "All Articles", href: "/blog" },
