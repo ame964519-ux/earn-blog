@@ -255,17 +255,17 @@ export default async function SingleArticlePage({
           <div className="lg:col-span-4 space-y-8">
             {/* Sidebar TOC */}
             <div className="hidden lg:block sticky top-24 space-y-6">
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-gray-100 dark:border-slate-800 shadow-sm">
-                <h3 className="font-bold text-gray-900 dark:text-white text-sm uppercase tracking-wider mb-3">
+              <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-gray-100 dark:border-slate-800 shadow-sm">
+                <h3 className="font-extrabold text-gray-900 dark:text-white text-base uppercase tracking-wider mb-4 border-b border-gray-100 dark:border-slate-800 pb-2">
                   Quick Navigation
                 </h3>
-                <nav className="space-y-1.5 text-xs max-h-72 overflow-y-auto">
+                <nav className="space-y-2 text-sm sm:text-base max-h-80 overflow-y-auto">
                   {post.tableOfContents.map((item, idx) => (
                     <a
                       key={idx}
                       href={`#${item.id}`}
-                      className={`block text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors py-1 ${
-                        item.level === 3 ? "pl-4 text-gray-500" : "font-semibold"
+                      className={`block text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors py-1 leading-snug ${
+                        item.level === 3 ? "pl-5 text-xs sm:text-sm text-gray-500 font-normal" : "font-semibold"
                       }`}
                     >
                       {item.text}
