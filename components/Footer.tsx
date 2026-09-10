@@ -129,7 +129,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link
+                  href="/dmca"
+                  className="hover:text-white transition-colors"
+                >
                   DMCA & Copyright
                 </Link>
               </li>

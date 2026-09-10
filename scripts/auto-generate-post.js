@@ -27,62 +27,15 @@ const uniqueImageLibrary = [
   "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80",
   "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&fit=crop&q=80",
   "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1542744094-3a31727f30ea?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1556742049-0a67e557224d?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1560472355-536de3962603?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1581291518655-9523c93269c4?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1508873696983-2df570464756?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=800&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?w=800&auto=format&fit=crop&q=80"
+  "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
 ];
 
-// Master pool of Core Niches for generative expansion
 const niches = [
   {
     name: "AI Automation Agency (AAA)",
     slugPrefix: "ai-automation-agency",
     category: "AI Tools",
     tags: ["AI Tools", "Agency", "Automation", "Zapier", "Make.com"],
-    coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=80",
     cpc: "$6.80+",
     coreProblem: "businesses spending 20+ hours weekly on manual data entry and CRM updates",
     solution: "no-code workflow automations using Make.com, Zapier, and OpenAI API integrations",
@@ -93,7 +46,6 @@ const niches = [
     slugPrefix: "domain-flipping-digital-real-estate",
     category: "Online Earning",
     tags: ["Domain Flipping", "Digital Assets", "Investing", "SedoSell", "GoDaddy"],
-    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
     cpc: "$5.90+",
     coreProblem: "finding undervalued brandable domain names before tech startups register them",
     solution: "identifying expiring premium domains and listing them on marketplace auctions",
@@ -104,9 +56,7 @@ const niches = [
     slugPrefix: "airbnb-co-hosting-rental-arbitrage",
     category: "Online Earning",
     tags: ["Airbnb", "Real Estate", "Co-Hosting", "Passive Income", "Property Management"],
-    coverImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop&q=80",
     cpc: "$7.20+",
-    summary: "How to manage short-term rentals for property owners without owning real estate",
     coreProblem: "busy homeowners who want rental revenue but lack time to manage guest check-ins and cleaning schedules",
     solution: "full-service digital co-hosting handling listings, dynamic pricing, and guest communication",
     businessModel: "taking a 15% to 25% share of gross monthly booking revenue"
@@ -116,7 +66,6 @@ const niches = [
     slugPrefix: "remote-technical-writing-web3-tech",
     category: "Online Earning",
     tags: ["Technical Writing", "Freelancing", "Documentation", "Web3", "Remote Work"],
-    coverImage: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80",
     cpc: "$6.40+",
     coreProblem: "software engineers creating complex APIs without clear documentation for developers",
     solution: "writing developer documentation, SDK quickstarts, and technical tutorials",
@@ -127,7 +76,6 @@ const niches = [
     slugPrefix: "canva-social-media-design-retainers",
     category: "Online Earning",
     tags: ["Canva", "Graphic Design", "Social Media", "Coaching", "Freelance"],
-    coverImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
     cpc: "$4.50+",
     coreProblem: "executive and fitness coaches needing daily engaging Instagram carousels",
     solution: "delivering 30 branded monthly carousel designs using reusable Canva Pro templates",
@@ -138,7 +86,6 @@ const niches = [
     slugPrefix: "amazon-influencer-program-onsite-reviews",
     category: "Affiliate Marketing",
     tags: ["Amazon Influencer", "Video Reviews", "Passive Income", "Affiliate", "Ecommerce"],
-    coverImage: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80",
     cpc: "$5.80+",
     coreProblem: "Amazon shoppers seeking authentic 60-second video demonstrations before buying",
     solution: "uploading honest product overview videos directly onto Amazon product detail pages",
@@ -149,85 +96,50 @@ const niches = [
     slugPrefix: "automated-youtube-shorts-capcut-elevenlabs",
     category: "AI Tools",
     tags: ["YouTube Shorts", "AI Video", "CapCut", "ElevenLabs", "Passive Income"],
-    coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&auto=format&fit=crop&q=80",
     cpc: "$5.20+",
     coreProblem: "producing daily engaging vertical video content without camera gear or studio lighting",
     solution: "using AI script generators, natural voiceovers, and automated kinetic captions",
     businessModel: "monetizing through YouTube Shorts Fund, brand sponsorships, and affiliate links"
-  },
-  {
-    name: "Blogging on Google Cloud & Next.js for $0 Hosting",
-    slugPrefix: "blogging-google-cloud-nextjs-free-hosting",
-    category: "Blogging",
-    tags: ["Next.js", "Vercel", "Web Development", "Blogging", "AdSense"],
-    coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop&q=80",
-    cpc: "$5.60+",
-    coreProblem: "high monthly hosting and plugin subscription costs eating into new blogger profits",
-    solution: "deploying ultra-fast static Jamstack websites on Vercel or Cloudflare Pages with zero monthly cost",
-    businessModel: "keeping 100% net revenue from AdSense and affiliate clicks"
-  },
-  {
-    name: "High-Ticket Insurance & Financial Lead Generation",
-    slugPrefix: "high-ticket-insurance-financial-lead-generation",
-    category: "Affiliate Marketing",
-    tags: ["Insurance", "Financial Leads", "CPA", "High CPC", "Affiliate"],
-    coverImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&auto=format&fit=crop&q=80",
-    cpc: "$9.80+",
-    coreProblem: "insurance agencies paying over $100 per lead via Google Ads auction bidding",
-    solution: "building localized informational comparison guides that capture organic search traffic",
-    businessModel: "selling verified inbound quote requests to regional brokers for $35 to $75 per lead"
-  },
-  {
-    name: "Building Chrome Extensions with ChatGPT & Cursor",
-    slugPrefix: "building-chrome-extensions-chatgpt-cursor",
-    category: "AI Tools",
-    tags: ["Chrome Extensions", "Cursor AI", "ChatGPT", "Micro SaaS", "Coding"],
-    coverImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
-    cpc: "$7.10+",
-    coreProblem: "users needing simple productivity browser automations without installing bloated software",
-    solution: "coding lightweight Manifest V3 extensions using AI coding assistants in under 48 hours",
-    businessModel: "charging a $4.99/month subscription via Stripe ExtensionPay"
   }
 ];
 
-// Angles to multiply into hundreds of distinct, non-repeating articles
 const angles = [
   {
-    titleTemplate: "{name}: The Complete Step-by-Step Blueprint",
+    titleTemplate: "{name}: The Master Operational Blueprint",
     slugSuffix: "step-by-step-blueprint",
     summaryTemplate: "A complete master blueprint explaining how to capitalize on {name} with zero upfront budget.",
-    sectionHeading1: "1. Understanding the Core Opportunity",
-    sectionHeading2: "2. The Step-by-Step Implementation Framework",
-    sectionHeading3: "3. Scaling and Automating Monthly Revenue"
+    h2_1: "Foundational Economics & Market Demand",
+    h2_2: "The End-to-End Implementation Framework",
+    h2_3: "Scaling & Workflow Automation Mechanics"
   },
   {
-    titleTemplate: "How Beginners Make $1,000/Month with {name}",
+    titleTemplate: "How Beginners Land $1,000/Month with {name}",
     slugSuffix: "beginners-1000-month-guide",
     summaryTemplate: "Discover how newcomers are generating consistent $1,000+ monthly revenue through {name}.",
-    sectionHeading1: "1. Why This Opportunity is Perfect for Beginners",
-    sectionHeading2: "2. Zero-Cost Tooling & Workflow Setup",
-    sectionHeading3: "3. Fast-Tracking Your First Paying Customer"
+    h2_1: "Why This Model is Uniquely Tailored for Newcomers",
+    h2_2: "Zero-Cost Tooling & Infrastructure Setup",
+    h2_3: "Fast-Tracking Your First Paying Client"
   },
   {
-    titleTemplate: "Top 5 Strategies to Scale {name} in 2026",
+    titleTemplate: "Top 5 Strategies to Scale {name} Effectively",
     slugSuffix: "top-5-scaling-strategies",
     summaryTemplate: "Explore the most effective, proven methods to scale your operations and profit margins in {name}.",
-    sectionHeading1: "1. Streamlining Production & Workflow Automation",
-    sectionHeading2: "2. High-Ticket Positioning & Value Pricing",
-    sectionHeading3: "3. Long-Term Customer Retention & Lifetime Value"
+    h2_1: "Streamlining Delivery & Capacity Optimization",
+    h2_2: "High-Ticket Packaging & Value Pricing",
+    h2_3: "Maximizing Long-Term Customer Lifetime Value"
   },
   {
-    titleTemplate: "Common Mistakes to Avoid When Starting {name}",
+    titleTemplate: "Common Pitfalls to Avoid When Launching {name}",
     slugSuffix: "mistakes-to-avoid-guide",
-    summaryTemplate: "Avoid costly missteps and fast-track your success with these critical lessons in {name}.",
-    sectionHeading1: "1. Pitfall 1: Underpricing and Low-Value Positioning",
-    sectionHeading2: "2. Pitfall 2: Neglecting Audience Feedback and Analytics",
-    sectionHeading3: "3. The Optimal Roadmap for Sustainable Growth"
+    summaryTemplate: "Avoid costly missteps and fast-track your success with these critical operational lessons in {name}.",
+    h2_1: "Pitfall 1: Underpricing and Low-Margin Positioning",
+    h2_2: "Pitfall 2: Neglecting Quality Control & Client Communication",
+    h2_3: "The Sustainable Growth Checklist"
   }
 ];
 
 function generateMarkdown(niche, angle, imageIndex) {
-  const today = new Date().toISOString().split("T")[0];
+  const dateStr = "2024-09-09";
   const title = angle.titleTemplate.replace("{name}", niche.name);
   const summary = angle.summaryTemplate.replace("{name}", niche.name);
   const selectedImage = uniqueImageLibrary[imageIndex % uniqueImageLibrary.length];
@@ -235,7 +147,7 @@ function generateMarkdown(niche, angle, imageIndex) {
   return `---
 title: "${title}"
 excerpt: "${summary}"
-date: "${today}"
+date: "${dateStr}"
 category: "${niche.category}"
 tags: ${JSON.stringify(niche.tags)}
 coverImage: "${selectedImage}"
@@ -246,27 +158,56 @@ author:
   avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
 ---
 
-## Executive Summary
+## Executive Overview & Commercial Opportunity
 
 ${summary} In the modern digital economy, solving ${niche.coreProblem} represents one of the highest-leverage opportunities for online entrepreneurs.
 
-## ${angle.sectionHeading1}
+By positioning yourself as an expert problem-solver rather than a commoditized service provider, you unlock substantial commercial demand.
+
+---
+
+## Strategic Resource & Platform Breakdown
+
+| Operational Layer | Recommended Solution | Cost Tier | Strategic Value Metric |
+| :--- | :--- | :--- | :--- |
+| **Core Delivery Engine** | ${niche.solution} | $0 (Free Tiers) | Rapid zero-capital execution |
+| **Workflow Efficiency** | Automation & AI Orchestration | Free / Low-Cost | 5x to 10x output speed per working hour |
+| **Client Acquisition** | Organic Discovery & Value-First Outreach | 100% Free | Predictable pipeline of high-intent buyers |
+| **Revenue Model** | ${niche.businessModel} | High-Margin | Consistent monthly recurring cash flow |
+
+---
+
+## ${angle.h2_1}
 
 The foundation of this model rests upon ${niche.solution}. Instead of competing in saturated, low-margin spaces, targeting specific business inefficiencies unlocks immediate commercial demand.
 
-## ${angle.sectionHeading2}
+By implementing systematic workflows and establishing clear client communication, creators build sustainable competitive moats.
 
-By implementing a structured approach with ${niche.businessModel}, publishers and creators establish predictable cash flow. Focus on delivering measurable outcomes, clear communication, and consistent daily execution.
+---
 
-## ${angle.sectionHeading3}
+## ${angle.h2_2}
+
+By implementing a structured approach with ${niche.businessModel}, publishers and creators establish predictable cash flow:
+1. **Define Core Deliverables**: Outline exact service boundaries and measurable performance benchmarks.
+2. **Deploy Free Tooling**: Leverage cloud tiers and open-source utilities to maintain 100% net profit margins.
+3. **Execute Structured Delivery**: Provide clear progress updates and rapid turnarounds to secure recurring client retainers.
+
+---
+
+## ${angle.h2_3}
 
 As your system matures, reinvest in automation and distribution. Combining organic search visibility, structured landing pages, and automated workflows allows you to scale revenue without linearly increasing work hours.
 
-## Key Strategic Steps to Get Started
+---
 
-1. **Commit to one single monetization path**: Dedicate 45 minutes daily to mastering this specific vertical for at least 30 uninterrupted days.
-2. **Build your digital presence**: Launch clean, mobile-responsive web assets using 100% free cloud tiers.
-3. **Track and optimize**: Monitor your performance metrics weekly to double down on what converts best.
+## Actionable Execution Checklist
+
+- [x] **Week 1**: Master the foundational tool stack and assemble 3 practical demonstration assets.
+- [x] **Week 2**: Initiate targeted outreach or publish high-intent content across organic channels.
+- [x] **Week 3**: Onboard initial test clients and gather verified performance case studies.
+- [x] **Week 4**: Reinvest cash flow into automated distribution and recurring client retainers.
+
+---
 
 ## Frequently Asked Questions (FAQs)
 

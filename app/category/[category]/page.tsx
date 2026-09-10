@@ -7,6 +7,41 @@ import AdBanner from "@/components/AdBanner";
 import { ArrowLeft, Sparkles, FolderOpen } from "lucide-react";
 import type { Metadata } from "next";
 
+const categoryNameMap: Record<string, string> = {
+  "ai-tools": "AI Tools",
+  "online-earning": "Online Earning",
+  "affiliate-marketing": "Affiliate Marketing",
+  "blogging": "Blogging & AdSense",
+  "crypto-fintech": "Crypto & FinTech",
+  "freelancing": "Freelancing",
+};
+
+function formatCategoryTitle(slug: string): string {
+  const normalized = decodeURIComponent(slug).toLowerCase().trim();
+  if (categoryNameMap[normalized]) {
+    return categoryNameMap[normalized];
+  }
+  const categories = getAllCategories();
+  const matched = categories.find(
+    (c) => c.toLowerCase().replace(/\s+/g, "-") === normalized
+  );
+  if (matched) return matched;
+
+  return normalized
+    .split("-")
+    .map((word) => {
+      if (word === "ai") return "AI";
+      if (word === "seo") return "SEO";
+      if (word === "saas") return "SaaS";
+      if (word === "cpa") return "CPA";
+      if (word === "kdp") return "KDP";
+      if (word === "vpn") return "VPN";
+      if (word === "adsense") return "AdSense";
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
 export async function generateStaticParams() {
   const categories = getAllCategories();
   return categories.map((category) => ({
@@ -19,9 +54,7 @@ export async function generateMetadata({
 }: {
   params: { category: string };
 }): Promise<Metadata> {
-  const decoded = decodeURIComponent(params.category).replace(/-/g, " ");
-  const formattedCategory =
-    decoded.charAt(0).toUpperCase() + decoded.slice(1);
+  const formattedCategory = formatCategoryTitle(params.category);
 
   return {
     title: `${formattedCategory} Articles & Earning Guides`,
@@ -35,9 +68,7 @@ export default function CategoryPage({
   params: { category: string };
 }) {
   const posts = getPostsByCategory(params.category);
-  const decoded = decodeURIComponent(params.category).replace(/-/g, " ");
-  const formattedCategory =
-    decoded.charAt(0).toUpperCase() + decoded.slice(1);
+  const formattedCategory = formatCategoryTitle(params.category);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -58,7 +89,7 @@ export default function CategoryPage({
           <FolderOpen className="w-3.5 h-3.5" />
           <span>Category Archive</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white capitalize">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
           {formattedCategory}
         </h1>
         <p className="text-sm text-gray-600 dark:text-gray-400">

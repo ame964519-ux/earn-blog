@@ -46,18 +46,6 @@ export default function LoginPage() {
     }
   };
 
-  const handleDemoLogin = async () => {
-    setIsLoading(true);
-    setError("");
-    const res = await login("member@earnsmartly.com", "password123");
-    setIsLoading(false);
-    if (res.success) {
-      router.push("/profile");
-    } else {
-      setError(res.error || "Demo login failed.");
-    }
-  };
-
   const handleResetPassword = (e: React.FormEvent) => {
     e.preventDefault();
     if (resetEmail) {
@@ -153,27 +141,6 @@ export default function LoginPage() {
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
-
-        <div className="relative my-6">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200 dark:border-slate-800" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white dark:bg-slate-900 px-3 text-gray-400 font-semibold">
-              Or Fast Track
-            </span>
-          </div>
-        </div>
-
-        {/* 1-Click Demo Login */}
-        <button
-          onClick={handleDemoLogin}
-          type="button"
-          className="w-full py-3.5 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-gray-800 dark:text-gray-200 text-xs font-bold transition-all flex items-center justify-center space-x-2 border border-slate-200 dark:border-slate-700"
-        >
-          <ShieldCheck className="w-4 h-4 text-indigo-500" />
-          <span>⚡ One-Click Instant Demo Login</span>
-        </button>
 
         {/* Footer link to Register */}
         <p className="text-center text-xs text-gray-600 dark:text-gray-400 pt-2">
