@@ -45,13 +45,13 @@ export default function SignupPage() {
     setIsLoading(true);
     setError("");
 
-    const success = await signup(name, email, password);
+    const res = await signup(name, email, password);
     setIsLoading(false);
 
-    if (success) {
+    if (res.success) {
       router.push("/profile");
     } else {
-      setError("Unable to register account. Please try a different email.");
+      setError(res.error || "Unable to register account. Please try a different email.");
     }
   };
 

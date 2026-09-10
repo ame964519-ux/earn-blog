@@ -36,23 +36,25 @@ export default function LoginPage() {
     setIsLoading(true);
     setError("");
 
-    const success = await login(email, password);
+    const res = await login(email, password);
     setIsLoading(false);
 
-    if (success) {
+    if (res.success) {
       router.push("/profile");
     } else {
-      setError("Invalid login credentials. Please try again.");
+      setError(res.error || "Invalid login credentials. Please try again.");
     }
   };
 
   const handleDemoLogin = async () => {
     setIsLoading(true);
     setError("");
-    const success = await login("member@earnsmartly.com", "password123");
+    const res = await login("member@earnsmartly.com", "password123");
     setIsLoading(false);
-    if (success) {
+    if (res.success) {
       router.push("/profile");
+    } else {
+      setError(res.error || "Demo login failed.");
     }
   };
 
