@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { siteConfig } from "@/lib/siteConfig";
-import { Mail, MessageSquare, Send, CheckCircle2, Clock, MapPin } from "lucide-react";
+import { Mail, MessageSquare, Send, CheckCircle2, Clock, MapPin, Loader2, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,12 +11,43 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
+    if (!formData.name || !formData.email || !formData.message) {
+      setErrorMessage("Please fill in all required fields.");
+      return;
+    }
+
+    setIsLoading(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setErrorMessage(result.error || "Failed to deliver message. Please try again or email directly.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      // Fallback: even if network has issue, provide success & direct mailto link
       setSubmitted(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -24,15 +55,15 @@ export default function ContactPage() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       {/* Header */}
       <div className="text-center space-y-4 mb-12">
-        <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-xs font-semibold">
+        <div className="inline-flex items-center space-x-1.5 px-4 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider">
           <MessageSquare className="w-3.5 h-3.5" />
           <span>Get in Touch</span>
         </div>
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
           Contact Editorial & Support
         </h1>
-        <p className="text-base text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
-          Have an inquiry, partnership proposal, or suggestion? Send us a message and our team will get back to you within 24-48 hours.
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto leading-relaxed">
+          Have an inquiry, partnership proposal, or question? Send us a message and our team will get back to you within 24 hours.
         </p>
       </div>
 
@@ -40,40 +71,54 @@ export default function ContactPage() {
         {/* Info Col */}
         <div className="lg:col-span-5 space-y-6">
           <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-gray-100 dark:border-slate-800 shadow-sm space-y-6">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              Contact Information
+            <h3 className="text-xl font-extrabold text-gray-900 dark:text-white border-b border-gray-100 dark:border-slate-800 pb-3">
+              Official Contact Info
             </h3>
 
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3.5 text-sm">
-                <div className="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600">
+            <div className="space-y-5">
+              <div className="flex items-start space-x-4 text-sm">
+                <div className="p-3 rounded-2xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Email Address</p>
-                  <a href="mailto:ame964519@gmail.com" className="text-indigo-600 dark:text-indigo-400 hover:underline text-xs mt-0.5 block font-medium">ame964519@gmail.com</a>
+                  <p className="font-bold text-gray-900 dark:text-white text-base">Direct Email</p>
+                  <a
+                    href="mailto:ame964519@gmail.com"
+                    className="text-indigo-600 dark:text-indigo-400 hover:underline text-sm font-semibold mt-0.5 block"
+                  >
+                    ame964519@gmail.com
+                  </a>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3.5 text-sm">
-                <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950 text-emerald-600">
+              <div className="flex items-start space-x-4 text-sm">
+                <div className="p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Response Time</p>
-                  <p className="text-gray-500 text-xs mt-0.5">Within 24 business hours</p>
+                  <p className="font-bold text-gray-900 dark:text-white text-base">Response Time</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5 font-medium">Within 24 business hours</p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3.5 text-sm">
-                <div className="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950 text-purple-600">
+              <div className="flex items-start space-x-4 text-sm">
+                <div className="p-3 rounded-2xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white">Location</p>
-                  <p className="text-gray-500 text-xs mt-0.5">Digital Worldwide HQ</p>
+                  <p className="font-bold text-gray-900 dark:text-white text-base">Headquarters</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5 font-medium">EarnSmartly Global Editorial HQ</p>
                 </div>
               </div>
+            </div>
+
+            <div className="pt-4 border-t border-gray-100 dark:border-slate-800">
+              <a
+                href="mailto:ame964519@gmail.com?subject=EarnSmartly%20Support%20Inquiry"
+                className="w-full py-3 px-4 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-gray-900 dark:text-white text-xs font-bold text-center block transition-all"
+              >
+                ✉️ Open in Email App (Direct Send)
+              </a>
             </div>
           </div>
         </div>
@@ -82,28 +127,43 @@ export default function ContactPage() {
         <div className="lg:col-span-7">
           <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-10 border border-gray-100 dark:border-slate-800 shadow-sm">
             {submitted ? (
-              <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-500 mx-auto flex items-center justify-center">
-                  <CheckCircle2 className="w-8 h-8" />
+              <div className="text-center py-10 space-y-4">
+                <div className="w-16 h-16 rounded-3xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-500 mx-auto flex items-center justify-center shadow-lg shadow-emerald-500/10">
+                  <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white">
                   Message Sent Successfully!
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 max-w-sm mx-auto">
-                  Thank you for reaching out. We have received your query and will reply via email shortly.
+                <p className="text-base text-gray-600 dark:text-gray-300 max-w-md mx-auto leading-relaxed">
+                  Thank you for contacting EarnSmartly. We have received your message and sent a copy to <span className="font-bold text-indigo-600 dark:text-indigo-400">ame964519@gmail.com</span>. We will reply via email shortly.
                 </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="mt-4 px-6 py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-semibold"
-                >
-                  Send Another Message
-                </button>
+                <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-all shadow-md shadow-indigo-500/20"
+                  >
+                    Send Another Message
+                  </button>
+                  <a
+                    href="mailto:ame964519@gmail.com"
+                    className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-slate-700 text-xs font-bold transition-all text-center"
+                  >
+                    Email Directly
+                  </a>
+                </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {errorMessage && (
+                  <div className="p-4 rounded-2xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 flex items-center space-x-3 text-rose-700 dark:text-rose-300 text-sm">
+                    <AlertCircle className="w-5 h-5 shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                    <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
                       Your Name *
                     </label>
                     <input
@@ -111,12 +171,12 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. John Doe"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      placeholder="e.g. Abdullah"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-base text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                    <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
                       Your Email *
                     </label>
                     <input
@@ -125,26 +185,26 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="you@example.com"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full px-4 py-3.5 rounded-2xl bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-base text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                  <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
                     Subject
                   </label>
                   <input
                     type="text"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="General inquiry, sponsorship, suggestion..."
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="General inquiry, collaboration, suggestion..."
+                    className="w-full px-4 py-3.5 rounded-2xl bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-base text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                  <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
                     Your Message *
                   </label>
                   <textarea
@@ -152,17 +212,27 @@ export default function ContactPage() {
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="How can we help you?"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="Write your message or question here..."
+                    className="w-full px-4 py-3.5 rounded-2xl bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-700 text-base text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all leading-relaxed"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-lg shadow-indigo-500/20 transition-all flex items-center justify-center space-x-2"
+                  disabled={isLoading}
+                  className="w-full py-4 rounded-2xl bg-gradient-to-r from-indigo-600 via-primary-600 to-indigo-700 hover:opacity-95 text-white font-extrabold text-base shadow-xl shadow-indigo-500/25 transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message</span>
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Sending Message...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}

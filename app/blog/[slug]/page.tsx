@@ -5,6 +5,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/siteConfig";
 import TableOfContents from "@/components/TableOfContents";
 import ShareButtons from "@/components/ShareButtons";
+import BookmarkButton from "@/components/BookmarkButton";
 import AdBanner from "@/components/AdBanner";
 import ArticleCard from "@/components/ArticleCard";
 import {
@@ -177,6 +178,7 @@ export default async function SingleArticlePage({
               <Clock className="w-4 h-4 mr-1 text-gray-400" />
               {post.readingTime}
             </span>
+            <BookmarkButton slug={post.slug} />
           </div>
         </header>
 
