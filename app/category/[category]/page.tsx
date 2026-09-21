@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getAllCategories, getPostsByCategory } from "@/lib/posts";
 import ArticleCard from "@/components/ArticleCard";
 import AdBanner from "@/components/AdBanner";
-import { ArrowLeft, Sparkles, FolderOpen, BookOpen, Layers, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, FolderOpen, BookOpen, Layers, X, Search } from "lucide-react";
 import type { Metadata } from "next";
 
 interface CategoryMetaInfo {
@@ -175,16 +175,40 @@ export async function generateMetadata({
 
 export default function CategoryPage({
   params,
+  searchParams,
 }: {
   params: { category: string };
+  searchParams?: { q?: string };
 }) {
-  const posts = getPostsByCategory(params.category);
+  const allCategoryPosts = getPostsByCategory(params.category);
   const info = getCategoryInfo(params.category);
+  const activeQuery = (searchParams?.q || "").trim().toLowerCase();
+
+  // Filter posts if a topic/search query is selected
+  const posts = activeQuery
+    ? allCategoryPosts.filter((post) => {
+        const titleMatch = post.title.toLowerCase().includes(activeQuery);
+        const excerptMatch = post.excerpt.toLowerCase().includes(activeQuery);
+        const tagsMatch = post.tags.some((t) =>
+          t.toLowerCase().includes(activeQuery)
+        );
+        // Also check if any word from the multi-word topic matches tags/title
+        const words = activeQuery.split(/\s+/).filter((w) => w.length > 2);
+        const wordMatch = words.some(
+          (w) =>
+            post.title.toLowerCase().includes(w) ||
+            post.tags.some((t) => t.toLowerCase().includes(w))
+        );
+        return titleMatch || excerptMatch || tagsMatch || wordMatch;
+      })
+    : allCategoryPosts;
+
+  const categoryPath = `/category/${params.category}`;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Back button */}
-      <div className="mb-6">
+      <div className="mb-6 flex items-center justify-between">
         <Link
           href="/blog"
           className="inline-flex items-center space-x-1.5 text-xs text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
@@ -192,6 +216,15 @@ export default function CategoryPage({
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to all articles</span>
         </Link>
+
+        {activeQuery && (
+          <Link
+            href={categoryPath}
+            className="inline-flex items-center space-x-1 text-xs text-indigo-600 dark:text-indigo-400 hover:underline"
+          >
+            <span>View all {allCategoryPosts.length} guides</span>
+          </Link>
+        )}
       </div>
 
       {/* Rich Category Header */}
@@ -204,7 +237,7 @@ export default function CategoryPage({
             </div>
             <div className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
               <BookOpen className="w-3.5 h-3.5" />
-              <span>{posts.length} In-Depth Guides</span>
+              <span>{allCategoryPosts.length} In-Depth Guides</span>
             </div>
           </div>
 
@@ -224,20 +257,49 @@ export default function CategoryPage({
             {info.longDescription}
           </p>
 
-          {/* Subtopic Highlights */}
+          {/* Subtopic Highlights / Filter Buttons */}
           {info.highlights && info.highlights.length > 0 && (
-            <div className="pt-3 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-bold text-gray-600 dark:text-gray-400 mr-1 flex items-center">
-                <Layers className="w-3.5 h-3.5 mr-1 text-indigo-500" /> Featured Topics:
-              </span>
-              {info.highlights.map((highlight) => (
-                <span
-                  key={highlight}
-                  className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-xs font-medium border border-gray-200/80 dark:border-slate-700 shadow-xs"
-                >
-                  {highlight}
-                </span>
-              ))}
+            <div className="pt-3">
+              <div className="text-xs font-bold text-gray-600 dark:text-gray-400 mb-2 flex items-center">
+                <Layers className="w-3.5 h-3.5 mr-1.5 text-indigo-500" /> Featured Topics &amp; Filters:
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {info.highlights.map((highlight) => {
+                  const isSelected =
+                    activeQuery.toLowerCase() === highlight.toLowerCase();
+                  const targetHref = isSelected
+                    ? categoryPath
+                    : `${categoryPath}?q=${encodeURIComponent(highlight)}`;
+
+                  return (
+                    <Link
+                      key={highlight}
+                      href={targetHref}
+                      className={`inline-flex items-center space-x-1 px-3 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 border cursor-pointer ${
+                        isSelected
+                          ? "bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-500/25 scale-105"
+                          : "bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-300 border-gray-200/80 dark:border-slate-700 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:shadow-sm"
+                      }`}
+                    >
+                      <span>{highlight}</span>
+                      {isSelected ? (
+                        <X className="w-3 h-3 ml-1 opacity-80 hover:opacity-100" />
+                      ) : null}
+                    </Link>
+                  );
+                })}
+
+                {/* Reset button if active filter */}
+                {activeQuery && (
+                  <Link
+                    href={categoryPath}
+                    className="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/50 hover:bg-rose-100 dark:hover:bg-rose-900/50 transition-colors"
+                  >
+                    <X className="w-3 h-3" />
+                    <span>Clear Filter</span>
+                  </Link>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -246,24 +308,53 @@ export default function CategoryPage({
       {/* Top Banner */}
       <AdBanner slot="category-top-banner" format="horizontal" />
 
+      {/* Active Filter Indicator */}
+      {activeQuery && (
+        <div className="flex items-center justify-between bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 px-4 py-3 rounded-2xl mb-8">
+          <div className="flex items-center space-x-2 text-xs sm:text-sm text-indigo-900 dark:text-indigo-200">
+            <Search className="w-4 h-4 text-indigo-500" />
+            <span>
+              Showing <strong>{posts.length}</strong> guide(s) matching topic: &ldquo;
+              <strong className="text-indigo-600 dark:text-indigo-400">{searchParams?.q}</strong>
+              &rdquo;
+            </span>
+          </div>
+          <Link
+            href={categoryPath}
+            className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline flex items-center space-x-1"
+          >
+            <span>Show all</span>
+            <X className="w-3 h-3" />
+          </Link>
+        </div>
+      )}
+
       {/* Posts List */}
       {posts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {posts.map((post) => (
             <ArticleCard key={post.slug} post={post} />
           ))}
         </div>
       ) : (
-        <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800">
-          <p className="text-base text-gray-600 dark:text-gray-400">
-            No articles found in this category yet.
+        <div className="text-center py-16 bg-white dark:bg-slate-900 rounded-3xl border border-gray-100 dark:border-slate-800 space-y-4">
+          <p className="text-base font-semibold text-gray-700 dark:text-gray-300">
+            No guides found matching &ldquo;{searchParams?.q}&rdquo; in {info.name}.
           </p>
-          <Link
-            href="/blog"
-            className="inline-block mt-4 px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold"
-          >
-            Browse all posts
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href={categoryPath}
+              className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-xs font-semibold hover:bg-gray-200 transition-colors"
+            >
+              View all {info.name} guides
+            </Link>
+            <Link
+              href={`/blog?q=${encodeURIComponent(searchParams?.q || "")}`}
+              className="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors"
+            >
+              Search &ldquo;{searchParams?.q}&rdquo; across entire website
+            </Link>
+          </div>
         </div>
       )}
     </div>

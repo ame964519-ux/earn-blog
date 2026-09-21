@@ -249,12 +249,13 @@ export default async function SingleArticlePage({
                 <Tag className="w-3.5 h-3.5 mr-1 text-indigo-500" /> Tags:
               </span>
               {post.tags.map((tag) => (
-                <span
+                <Link
                   key={tag}
-                  className="px-3 py-1 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-xs font-medium"
+                  href={`/blog?q=${encodeURIComponent(tag)}`}
+                  className="px-3 py-1 rounded-lg bg-gray-100 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/60 hover:text-indigo-600 dark:hover:text-indigo-400 text-gray-700 dark:text-gray-300 text-xs font-medium transition-colors border border-transparent hover:border-indigo-200 dark:hover:border-indigo-800"
                 >
                   #{tag}
-                </span>
+                </Link>
               ))}
             </div>
 
