@@ -4,7 +4,7 @@ excerpt: "Learn how e-commerce brands generate 30%+ open rates and thousands in 
 date: "2024-09-09"
 category: "AI Tools"
 tags: ["AI Copywriting","Ecommerce","Email Marketing","Klaviyo","Conversion Rate"]
-coverImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($6.10+)"
 featured: false
 author:

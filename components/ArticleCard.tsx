@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { PostMeta } from "@/lib/posts";
 import { Clock, Calendar, ArrowRight, TrendingUp } from "lucide-react";
 
@@ -7,23 +8,26 @@ export default function ArticleCard({ post }: { post: PostMeta }) {
   return (
     <article className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-indigo-500/30 transition-all duration-300 flex flex-col h-full">
       {/* Thumbnail */}
-      <Link href={`/blog/${post.slug}`} className="relative block overflow-hidden aspect-[16/9]">
-        <img
+      <Link href={`/blog/${post.slug}`} className="relative block overflow-hidden aspect-[16/9] bg-slate-100 dark:bg-slate-800">
+        <Image
           src={post.coverImage}
           alt={post.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+          quality={75}
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10" />
         
         {/* Category Pill */}
-        <span className="absolute top-3 left-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-indigo-600 dark:text-indigo-400 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+        <span className="absolute top-3 left-3 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-indigo-600 dark:text-indigo-400 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
           {post.category}
         </span>
 
         {/* CPC badge */}
         {post.cpcPotential && (
-          <span className="absolute top-3 right-3 bg-emerald-500/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm flex items-center space-x-1 backdrop-blur-sm">
+          <span className="absolute top-3 right-3 z-20 bg-emerald-500/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm flex items-center space-x-1 backdrop-blur-sm">
             <TrendingUp className="w-3 h-3" />
             <span>{post.cpcPotential} Value</span>
           </span>
@@ -65,6 +69,9 @@ export default function ArticleCard({ post }: { post: PostMeta }) {
               src={post.author.avatar}
               alt={post.author.name}
               className="w-7 h-7 rounded-full object-cover border border-indigo-200 dark:border-indigo-900"
+              loading="lazy"
+              width={28}
+              height={28}
             />
             <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
               {post.author.name}

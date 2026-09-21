@@ -4,7 +4,7 @@ excerpt: "A complete masterclass on building an aesthetic apparel and lifestyle 
 date: "2024-09-09"
 category: "Online Earning"
 tags: ["Online Earning", "Online Earning", "Passive Income", "Guide", "Business Strategy"]
-coverImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.50+)"
 featured: false
 author:

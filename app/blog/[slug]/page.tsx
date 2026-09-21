@@ -1,6 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/siteConfig";
 import TableOfContents from "@/components/TableOfContents";
@@ -212,11 +213,15 @@ export default async function SingleArticlePage({
         </header>
 
         {/* Featured Image */}
-        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl aspect-[16/9] mb-10 border border-gray-100 dark:border-slate-800">
-          <img
+        <div className="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative aspect-[16/9] mb-10 border border-gray-100 dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+          <Image
             src={post.coverImage}
             alt={post.title}
-            className="w-full h-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 896px"
+            quality={80}
+            className="object-cover"
           />
         </div>
 

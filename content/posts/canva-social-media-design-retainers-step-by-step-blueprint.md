@@ -4,7 +4,7 @@ excerpt: "A complete master blueprint explaining how to capitalize on Canva Soci
 date: "2024-09-09"
 category: "Online Earning"
 tags: ["Online Earning", "Online Earning", "Passive Income", "Guide", "Business Strategy"]
-coverImage: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.50+)"
 featured: false
 author:

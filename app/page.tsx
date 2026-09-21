@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
 import ArticleCard from "@/components/ArticleCard";
 import AdBanner from "@/components/AdBanner";
@@ -133,13 +134,17 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-gray-100 dark:border-slate-800/80 shadow-md hover:shadow-2xl transition-all duration-300">
-              <div className="lg:col-span-7 overflow-hidden rounded-2xl aspect-[16/10] relative group">
-                <img
+              <div className="lg:col-span-7 overflow-hidden rounded-2xl aspect-[16/10] relative group bg-slate-100 dark:bg-slate-800">
+                <Image
                   src={featuredPost.coverImage}
                   alt={featuredPost.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 650px"
+                  quality={80}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-4 left-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                <span className="absolute top-4 left-4 z-20 bg-indigo-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                   {featuredPost.category}
                 </span>
               </div>

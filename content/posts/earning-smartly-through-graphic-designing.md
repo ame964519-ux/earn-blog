@@ -4,7 +4,7 @@ excerpt: "Learn how modern graphic designers combine Canva and AI tools like Cha
 date: "2024-09-09"
 category: "Online Earning"
 tags: ["Graphic Design", "Canva", "AI Tools", "Freelancing", "Online Earning"]
-coverImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.40+)"
 featured: true
 author:

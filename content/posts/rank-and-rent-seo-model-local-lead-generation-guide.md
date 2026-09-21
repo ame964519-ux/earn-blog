@@ -4,7 +4,7 @@ excerpt: "Master the rank and rent SEO model. Learn how to rank local service we
 date: "2024-09-09"
 category: "Online Earning"
 tags: ["Rank and Rent", "Local Lead Generation", "SEO", "Passive Income", "Digital Real Estate", "Contractor Leads"]
-coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($8.20+)"
 featured: true
 author:

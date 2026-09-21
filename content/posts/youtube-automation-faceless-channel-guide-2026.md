@@ -4,7 +4,7 @@ excerpt: "How digital creators are scaling 6-figure automated YouTube channels u
 date: "2024-09-09"
 category: "Online Earning"
 tags: ["Online Earning", "Online Earning", "Passive Income", "Guide", "Business Strategy"]
-coverImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop&q=80"
+coverImage: "https://images.unsplash.com/photo-1618042164219-62c820f10723?w=800&auto=format&fit=crop&q=80"
 cpcPotential: "High CPC ($5.50+)"
 featured: false
 author:

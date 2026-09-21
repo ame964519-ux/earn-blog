@@ -94,23 +94,31 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="ObardLCi17g-v12gl6Omr4qoHEiYQZ6yl3_77QQpo0k" />
         <meta name="google-adsense-account" content="ca-pub-4145844582801872" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        
         {/* Google AdSense Script Integration */}
         {siteConfig.adsense.enabled &&
           !siteConfig.adsense.publisherId.includes("XXXX") && (
-            <script
-              async
+            <Script
+              id="google-adsense"
+              strategy="lazyOnload"
               src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig.adsense.publisherId}`}
               crossOrigin="anonymous"
             />
           )}
+
         {/* Google Analytics 4 (GA4) Live Traffic Tracker */}
         {siteConfig.analytics?.enabled && siteConfig.analytics?.gaId && (
           <>
-            <script
-              async
+            <Script
+              id="google-analytics-tag"
+              strategy="afterInteractive"
               src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.gaId}`}
             />
-            <script
+            <Script
+              id="google-analytics-inline"
+              strategy="afterInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
