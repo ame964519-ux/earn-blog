@@ -219,8 +219,7 @@ export default async function SingleArticlePage({
             alt={post.title}
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 896px"
-            quality={80}
+            unoptimized
             className="object-cover"
           />
         </div>

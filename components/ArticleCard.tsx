@@ -5,16 +5,18 @@ import { PostMeta } from "@/lib/posts";
 import { Clock, Calendar, ArrowRight, TrendingUp } from "lucide-react";
 
 export default function ArticleCard({ post }: { post: PostMeta }) {
+  const defaultImage = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80";
+  const imageSrc = post.coverImage || defaultImage;
+
   return (
     <article className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-gray-100 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-indigo-500/30 transition-all duration-300 flex flex-col h-full">
       {/* Thumbnail */}
       <Link href={`/blog/${post.slug}`} className="relative block overflow-hidden aspect-[16/9] bg-slate-100 dark:bg-slate-800">
         <Image
-          src={post.coverImage}
+          src={imageSrc}
           alt={post.title}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
-          quality={75}
+          unoptimized
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
