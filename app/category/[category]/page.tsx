@@ -18,92 +18,100 @@ interface CategoryMetaInfo {
 const categoryDetailsMap: Record<string, CategoryMetaInfo> = {
   "online-earning": {
     name: "Online Earning",
-    tagline: "Actionable Blueprints & Digital Income Frameworks",
+    tagline: "Real & Proven Ways to Make Money Online from Home",
     description:
-      "Explore comprehensive step-by-step tutorials, verified business models, and high-margin side hustle strategies tailored for creators, freelancers, and digital entrepreneurs.",
+      "Looking for genuine, practical ways to make money on the internet? Here you will find clear, step-by-step guides on legitimate online earning methods — created for absolute beginners as well as experienced earners.",
     longDescription:
-      "Whether you are launching a high-ticket freelance service, building and flipping digital assets, negotiating recurring client retainers, or scaling zero-budget internet ventures, our deep-dive guides provide actionable execution frameworks with real-world case studies and $0 startup tool stacks.",
+      "Whether you want to earn extra money in your free time, start a zero-investment side hustle, work on remote freelance projects, or build long-term passive income, our guides explain exactly how each method works. We cover realistic earning estimates, required skills, common scams to avoid, and safe payment methods to withdraw your money directly to your bank account or local wallet.",
     highlights: [
-      "Freelance Retainers",
-      "Digital Asset Flipping",
-      "Zero-Capital Startups",
-      "Remote Income Streams",
-      "High-Margin Services",
+      "Work From Home",
+      "Beginner Side Hustles",
+      "YouTube Automation",
+      "Selling Digital Products",
+      "Passive Income Ideas",
+      "Remote Online Jobs",
+      "Zero Investment Methods",
+      "Mobile Earning Apps",
     ],
   },
   "ai-tools": {
     name: "AI Tools",
-    tagline: "Cutting-Edge AI Workflows & Autonomous Automation",
+    tagline: "Smart AI Tools to Save Time & Multiply Your Income",
     description:
-      "Discover modern artificial intelligence workflows, prompt engineering systems, and automated software pipelines to multiply your daily creative and business output.",
+      "Discover the best free and paid AI tools to automate everyday tasks, generate content faster, and build profitable online projects without needing technical skills.",
     longDescription:
-      "Master generative AI tools for automated video production, voice cloning, e-commerce copywriting, lightweight micro-SaaS extensions, and full-service AI Automation Agencies (AAA). Learn how to eliminate manual bottlenecks and scale digital operations effortlessly.",
+      "We test and review top artificial intelligence software for automated video editing, realistic voiceovers, content writing, graphic design, and customer support bots. Learn how to use these smart tools to finish hours of work in minutes and unlock brand new earning opportunities.",
     highlights: [
-      "AI Automation Agencies",
-      "Voice & Video Synthesis",
-      "Prompt Engineering",
-      "No-Code Workflow Bots",
-      "Micro-SaaS & Extensions",
+      "ChatGPT & Smart Prompts",
+      "AI Video & Voice Generators",
+      "Content Automation",
+      "No-Code AI Apps",
+      "AI Side Businesses",
+      "Free Productivity Tools",
     ],
   },
   "affiliate-marketing": {
     name: "Affiliate Marketing",
-    tagline: "High-Yield Commission Models & Passive Royalties",
+    tagline: "Earn Steady Commissions by Recommending Products",
     description:
-      "Master high-ticket affiliate programs, recurring SaaS referral funnels, and organic review strategies that turn traffic into reliable monthly commissions.",
+      "Learn how to earn reliable monthly income by recommending products and services you trust — without having to create products, hold inventory, or handle customer support.",
     longDescription:
-      "Learn how to build high-converting product comparison hubs, capitalize on the Amazon Influencer Program for passive onsite video review royalties, negotiate direct CPA payouts, and construct automated lead generation engines with proven conversion frameworks.",
+      "From joining beginner-friendly affiliate networks (like Amazon Associates, ClickBank, and high-paying SaaS programs) to creating honest product reviews and social media content, our guides walk you through every step to generate recurring commissions.",
     highlights: [
-      "Amazon Influencer Program",
-      "High-Ticket SaaS Referrals",
-      "CPA Lead Generation",
-      "Review Comparison Hubs",
-      "Recurring Passive Royalties",
+      "Amazon Associates",
+      "High-Paying SaaS Affiliates",
+      "Product Review Guides",
+      "Social Media Affiliate Links",
+      "Recurring Monthly Payouts",
+      "Beginner Affiliate Networks",
     ],
   },
   "blogging": {
     name: "Blogging & AdSense",
-    tagline: "Niche Authority Sites & Programmatic Ad Revenue",
+    tagline: "Start a Profitable Blog & Earn with Google AdSense",
     description:
-      "In-depth masterclasses on building high-traffic blogs, securing fast Google AdSense approval, technical SEO optimization, and zero-cost cloud deployments.",
+      "Everything you need to know about starting a successful website, writing articles that rank high on Google search, and getting approved for Google AdSense.",
     longDescription:
-      "From finding untapped high-CPC keywords and structuring semantic on-page content to optimizing Core Web Vitals on zero-cost cloud Jamstack hosts (Next.js + Vercel), discover everything required to scale organic search impressions into consistent monthly ad revenue.",
+      "Learn how to choose profitable blog niches, find low-competition keywords, write engaging posts that bring real visitors, get quick AdSense approval, and set up fast, free website hosting. Turn your writing and passions into steady advertising income.",
     highlights: [
       "Google AdSense Approval",
-      "High-CPC Keyword Research",
-      "Technical SEO Auditing",
-      "Zero-Cost Cloud Hosting",
-      "Core Web Vitals Tuning",
+      "Low-Competition Keywords",
+      "Beginner SEO Tips",
+      "Free Fast Hosting",
+      "Blog Traffic Strategies",
+      "High-CPC Niches",
     ],
   },
   "crypto-fintech": {
     name: "Crypto & FinTech",
-    tagline: "Global Digital Payments & Decentralized Finance",
+    tagline: "Online Payments, Digital Wallets & Global Transfers",
     description:
-      "Navigating modern fintech rails, multi-currency invoicing, cross-border payment gateways, and emerging digital asset earning opportunities securely.",
+      "Simple, beginner-friendly guides on setting up international digital wallets, receiving global client payments, and managing your online earnings safely.",
     longDescription:
-      "Explore practical guides on setting up international merchant accounts, managing multi-currency cash flows, leveraging secure digital wallets, and understanding Web3 infrastructure designed specifically for remote contractors and global digital creators.",
+      "Understand how to receive foreign currency payments from overseas clients, use trusted payment platforms (such as PayPal, Payoneer, Wise, and Binance), minimize exchange fees, and keep your online funds protected with proper security practices.",
     highlights: [
-      "Global Payment Gateways",
-      "Multi-Currency Invoicing",
-      "Remote Banking Rails",
+      "International Payment Wallets",
+      "Freelance Payout Methods",
+      "Low-Fee Currency Exchange",
       "Digital Wallet Security",
-      "Web3 Foundations",
+      "Safe Crypto Basics",
+      "Global Bank Transfers",
     ],
   },
   "freelancing": {
     name: "Freelancing",
-    tagline: "High-Income Remote Skills & Agency Growth",
+    tagline: "Turn Your Skills into High-Paying Remote Work",
     description:
-      "Transform your marketable technical and creative skills into premium client retainers, high-converting Upwork/Fiverr gigs, and scalable digital agencies.",
+      "Master the art of finding freelance clients, winning high-paying gigs on Upwork & Fiverr, and building a rewarding remote career from anywhere.",
     longDescription:
-      "Discover client acquisition blueprints, value-based pricing models, high-converting proposal templates, and step-by-step systems to transition from a single freelancer trading time for money into a high-leverage digital service business.",
+      "Get practical advice on creating a standout portfolio, writing proposals that clients actually read, pricing your services with confidence, and building long-term client relationships. Learn in-demand skills like web design, copywriting, video editing, and digital marketing.",
     highlights: [
-      "High-Ticket Retainers",
-      "Upwork & Fiverr Optimization",
-      "Value-Based Proposals",
-      "Client Outreach Systems",
-      "Agency Scaling Models",
+      "Upwork & Fiverr Tips",
+      "Winning Proposal Templates",
+      "High-Demand Remote Skills",
+      "Client Outreach & Retention",
+      "Setting Freelance Rates",
+      "Portfolio Building Guides",
     ],
   },
 };
@@ -138,10 +146,10 @@ function getCategoryInfo(slug: string): CategoryMetaInfo {
 
   return {
     name: formattedName,
-    tagline: `Curated Guides & High-Impact Tutorials`,
-    description: `Discover comprehensive guides, proven strategies, and monetized tutorials in the ${formattedName} niche.`,
-    longDescription: `Explore in-depth case studies, actionable workflows, zero-budget blueprints, and expert recommendations designed to help you master ${formattedName} and build sustainable online revenue streams.`,
-    highlights: ["Step-by-Step Blueprints", "Case Studies", "Zero-Budget Tools", "Monetization Models"],
+    tagline: `Beginner Guides & Step-by-Step Tutorials`,
+    description: `Discover easy-to-follow, practical guides and real-world tips to help you get started in ${formattedName}.`,
+    longDescription: `Learn how ${formattedName} works, how to get started step-by-step with zero upfront cost, and the best practices to grow your income and skills.`,
+    highlights: ["Step-by-Step Guides", "Beginner Tips", "Free Tools", "Real Earning Methods"],
   };
 }
 
