@@ -94,6 +94,7 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="ObardLCi17g-v12gl6Omr4qoHEiYQZ6yl3_77QQpo0k" />
         <meta name="google-adsense-account" content="ca-pub-4145844582801872" />
+        <meta name="p:domain_verify" content="c2a939b665617e3558958139a824da9c" />
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         
