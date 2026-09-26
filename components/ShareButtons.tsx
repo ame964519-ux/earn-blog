@@ -6,9 +6,11 @@ import { Share2, Check, Copy } from "lucide-react";
 export default function ShareButtons({
   title,
   url,
+  image,
 }: {
   title: string;
   url: string;
+  image?: string;
 }) {
   const [copied, setCopied] = useState(false);
 
@@ -30,11 +32,39 @@ export default function ShareButtons({
     url
   )}`;
 
+  const sharePinterest = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(
+    url
+  )}&media=${encodeURIComponent(
+    image || "https://earn-blog.vercel.app/pins/pin_youtube_automation.jpg"
+  )}&description=${encodeURIComponent(title)}`;
+
+  const shareReddit = `https://www.reddit.com/submit?url=${encodeURIComponent(
+    url
+  )}&title=${encodeURIComponent(title)}`;
+
   return (
     <div className="flex flex-wrap items-center gap-2.5 my-6 py-4 border-y border-gray-100 dark:border-slate-800">
       <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider flex items-center mr-2">
         <Share2 className="w-4 h-4 mr-1 text-indigo-500" /> Share:
       </span>
+
+      <a
+        href={sharePinterest}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-3 py-1.5 rounded-lg bg-red-500/10 text-red-600 dark:text-red-400 hover:bg-red-500 hover:text-white text-xs font-bold transition-colors flex items-center gap-1"
+      >
+        📌 Pin on Pinterest
+      </a>
+
+      <a
+        href={shareReddit}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-3 py-1.5 rounded-lg bg-orange-500/10 text-orange-600 dark:text-orange-400 hover:bg-orange-500 hover:text-white text-xs font-semibold transition-colors"
+      >
+        Reddit
+      </a>
 
       <a
         href={shareTwitter}

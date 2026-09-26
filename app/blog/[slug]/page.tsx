@@ -263,8 +263,8 @@ export default async function SingleArticlePage({
               ))}
             </div>
 
-            {/* Social Share Buttons */}
-            <ShareButtons title={post.title} url={fullUrl} />
+            {/* Social Share Buttons with Pinterest Pin */}
+            <ShareButtons title={post.title} url={fullUrl} image={post.coverImage} />
 
             {/* Author Box */}
             <div className="mt-8 p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col sm:flex-row items-center sm:items-start gap-4">
